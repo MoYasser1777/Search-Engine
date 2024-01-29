@@ -1,0 +1,712 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Uninformed Search Algorithms - Javatpoint</title>
+  <link rel="SHORTCUT ICON" href="https://static.javatpoint.com/images/favicon2.png">
+  <link rel="stylesheet" type="text/css" href="https://static.javatpoint.com/link.css?v=5.5" async>
+  <link rel="dns-prefetch" href="https://clients1.google.com">
+  <link rel="dns-prefetch" href="https://static.javatpoint.com">
+  <link rel="dns-prefetch" href="https://googleads.g.doubleclick.net">
+  <link rel="dns-prefetch" href="https://www.google.com">
+  <link rel="dns-prefetch" href="https://feedify.net">
+  <meta name="theme-color" content="#4CAF50">
+  <meta property="og:title" content="Uninformed Search Algorithms - Javatpoint">
+  <meta property="og:description" content="Uninformed Search Algorithms with AI, Artificial Intelligence, Tutorial, Introduction, History of Artificial Intelligence, AI Overview, Application of AI, Types of AI, What is AI, etc.">
+  <meta name="keywords" content="ai, artificial intelligence, tutorial, introduction, history of ai, issues, ai overview, application of ai, types of ai, what is ai, subsets of ai, types of agents, intelligent agent, agent environment, turing test in ai, robotics, intelligent systems">
+  <meta name="description" content="Uninformed Search Algorithms with AI, Artificial Intelligence, Tutorial, Introduction, History of Artificial Intelligence, AI Overview, Application of AI, Types of AI, What is AI, etc.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="canonical" href="https://www.javatpoint.com/ai-uninformed-search-algorithms">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+  <meta name="twitter:title" property="og:title" content="Uninformed Search Algorithms - Javatpoint">
+  <meta name="twitter:description" property="og:description" content="Uninformed Search Algorithms with AI, Artificial Intelligence, Tutorial, Introduction, History of Artificial Intelligence, AI Overview, Application of AI, Types of AI, What is AI, etc.">
+  <meta property="og:url" content="https://www.javatpoint.com/ai-uninformed-search-algorithms">
+  <meta property="og:site_name" content="www.javatpoint.com">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@pagejavatpoint">
+  <meta name="twitter:domain" content="www.javatpoint.com">
+  <meta name="twitter:creator" content="@pagejavatpoint">
+  <link href="https://www.javatpoint.com/manifest.json" rel="manifest">
+  <script data-cfasync="false" type="text/javascript">(function(w, d) { var s = d.createElement('script'); s.src = '//delivery.adrecover.com/37784/adRecover.js?ts=1543562646174'; s.type = 'text/javascript'; s.async = true; (d.getElementsByTagName('head')[0] || d.getElementsByTagName('body')[0]).appendChild(s); })(window, document);</script>
+  <script data-cfasync="false" type="text/javascript">
+(function (w, d) {
+  var siteId = "37780";
+  var targetElement =
+    d.getElementsByTagName("head")[0] || d.getElementsByTagName("body")[0];
+  var s = d.createElement("script");
+  s.src = "//cdn.adpushup.com/" + siteId + "/adpushup.js";
+  s.crossOrigin = "anonymous";
+  s.type = "text/javascript";
+  s.async = true;
+  targetElement.appendChild(s);
+  function sendErrorLog(log) {
+    var eventName = "script_error";
+    log.siteId = siteId;
+    var data = btoa(JSON.stringify(log));
+    var img = document.createElement("img");
+    img.src =
+      "https://aplogger.adpushup.com/log?event=HC_" + eventName + "&data=" + data;
+  }
+  var searchParams =
+    typeof URLSearchParams === "function" &&
+    new URLSearchParams(window.location.search);
+  if (searchParams) {
+    var isDebugModeOn = searchParams.has("apDebug");
+  }
+  w.addEventListener("error", function (event) {
+    try {
+      var filename = event.filename || "";
+      if (filename.indexOf("/" + siteId + "/adpushup.js") === -1) {
+        return;
+      }
+      var error = event.error;
+      if (error) {
+        var message = error.message;
+        var stack = error.stack;
+      }
+      message = message || event.message;
+      var log = {
+        message: message,
+        stack: stack || "",
+        timestamp: Math.floor(event.timeStamp),
+        type: "uncaughterror",
+      };
+      sendErrorLog(log);
+      !isDebugModeOn && event.preventDefault();
+    } catch (error) {}
+  });
+  w.addEventListener("unhandledrejection", function (event) {
+    var reason = event.reason;
+    if (typeof reason === "object") reason = JSON.stringify(reason);
+    var log = {
+      message: reason || "no reason found",
+      timestamp: Math.floor(event.timeStamp),
+      type: "unhandledrejection",
+    };
+    sendErrorLog(log);
+    !isDebugModeOn && event.preventDefault();
+  });
+  var ga = d.createElement("script");
+  ga.src = "https://www.googletagmanager.com/gtag/js?id=G-Z0TZ7TDHS1";
+  ga.type = "text/javascript";
+  ga.async = true;
+  targetElement.appendChild(ga);
+  w.dataLayer = window.dataLayer || [];
+  w.gtag = function () {
+    window.dataLayer.push(arguments);
+  };
+  w.gtag("js", new Date());
+  w.gtag("config", "G-Z0TZ7TDHS1", {
+    custom_map: { dimension1: "siteid" },
+  });
+  w.gtag("event", "script-call", {
+    send_to: "G-Z0TZ7TDHS1",
+    siteid: siteId,
+  });
+  s.onerror = function (msg) {
+    w.gtag("event", "ad-block", {
+      send_to: "G-Z0TZ7TDHS1",
+      siteid: siteId,
+    });
+  };
+})(window, document);
+</script>
+ </head>
+ <body onload="highlightlink()">
+  <div id="page" style="margin:-8px;background-color:#f5f5f4;">
+   <div id="container">
+    <div class="header">
+     <table style="width:100%;margin-bottom:5px">
+      <tbody>
+       <tr>
+        <td>
+         <div style="clear:both;float:left;width:230px;margin-top:15px;margin-left:20px"><a href="https://www.javatpoint.com"><img src="https://static.javatpoint.com/images/logo/jtp_logo.png" alt="Javatpoint Logo"></a>
+         </div>
+         <div style="float:left;width:60%;">
+          <script> (function() { var cx = '005383125436438536544:y1edweedxwi'; var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true; gcse.src = 'https://cse.google.com/cse.js?cx=' + cx; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s); })();</script><gcse:search></gcse:search>
+         </div></td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+    <div class="headermobile">
+     <div style="margin-top:10px;padding:0px;text-align:left;"><span style="float:left"><input type="image" src="https://www.javatpoint.com/images/menuhome64.png" alt="Go To Top" onclick="showmenu()"></span> <span style="float:left"><a href="https://www.javatpoint.com"><img src="https://www.javatpoint.com/images/logo/jtp_logo.png" alt="Javatpoint Logo"></a></span>
+     </div>
+     <div style="margin:0px;padding:0px;clear:both">
+      <script>
+  (function() {
+    var cx = '005383125436438536544:y1edweedxwi';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script><gcse:search></gcse:search>
+     </div>
+    </div>
+    <div id="link" style="clear:both;z-index:999">
+     <div class="ddsmoothmenu">
+      <ul>
+       <li><a href="https://www.javatpoint.com">Home</a></li>
+       <li><a href="artificial-intelligence-ai" class="selected">Artificial Intelligence</a></li>
+       <li><a href="blockchain-tutorial">Blockchain</a></li>
+       <li><a href="html-tutorial">HTML</a></li>
+       <li><a href="css-tutorial">CSS</a></li>
+       <li><a href="javascript-tutorial">JavaScript</a></li>
+       <li><a href="selenium-tutorial">Selenium</a></li>
+       <li><a href="data-structure-tutorial">DS</a></li>
+       <li><a href="dbms-tutorial">DBMS</a></li>
+       <li><a href="control-system-tutorial">Control System</a></li>
+       <li><a href="java-tutorial">Java</a></li>
+       <li><a href="selenium-tutorial">Selenium</a></li>
+       <li><a href="jquery-tutorial">jQuery</a></li>
+       <li><a href="corejava-interview-questions">Interview Q</a></li>
+      </ul><br style="clear: left">
+     </div>
+    </div>
+    <div class="mobilemenu" style="clear:both">
+     <ins class="adPushupAds" data-adpcontrol="hqdgs" data-ver="2" data-siteid="37780" data-ac="PHNjcmlwdCBhc3luYyBzcmM9Ii8vcGFnZWFkMi5nb29nbGVzeW5kaWNhdGlvbi5jb20vcGFnZWFkL2pzL2Fkc2J5Z29vZ2xlLmpzIj48L3NjcmlwdD4KPCEtLSBDbV8zMDB4MjUwX01vYl8xNC85IC0tPgo8aW5zIGNsYXNzPSJhZHNieWdvb2dsZSIKICAgICBzdHlsZT0iZGlzcGxheTppbmxpbmUtYmxvY2s7d2lkdGg6MzAwcHg7aGVpZ2h0OjI1MHB4IgogICAgIGRhdGEtYWQtY2xpZW50PSJjYS1wdWItNDY5OTg1ODU0OTAyMzM4MiIKICAgICBkYXRhLWFkLXNsb3Q9IjcwMTQyNzI1MTkiPjwvaW5zPgo8c2NyaXB0PgooYWRzYnlnb29nbGUgPSB3aW5kb3cuYWRzYnlnb29nbGUgfHwgW10pLnB1c2goe30pOwo8L3NjcmlwdD4="></ins>
+     <script data-cfasync="false" type="text/javascript">(function (w, d) { for (var i = 0, j = d.getElementsByTagName("ins"), k = j[i]; i < j.length; k = j[++i]){ if(k.className == "adPushupAds" && k.getAttribute("data-push") != "1") { ((w.adpushup = w.adpushup || {}).control = (w.adpushup.control || [])).push(k); k.setAttribute("data-push", "1");} } })(window, document);</script>
+    </div>
+    <div id="menu">
+     <div class="leftmenu2">
+      <h2 class="spanh2"><span class="spanh2">Artificial Intelligence</span></h2>
+     </div>
+     <div class="leftmenu"><a href="artificial-intelligence-ai">Artificial Intelligence (AI)</a> <a href="application-of-ai">Applications of AI</a> <a href="history-of-artificial-intelligence">History of AI</a> <a href="types-of-artificial-intelligence">Types of AI</a>
+     </div>
+     <div class="leftmenu2">
+      <h2 class="spanh2"><span class="spanh2">Intelligent Agent</span></h2>
+     </div>
+     <div class="leftmenu"><a href="types-of-ai-agents">Types of Agents</a> <a href="agents-in-ai">Intelligent Agent</a> <a href="agent-environment-in-ai">Agent Environment</a> <a href="turing-test-in-ai">Turing Test in AI</a>
+     </div>
+     <div class="leftmenu2">
+      <h2 class="spanh2"><span class="spanh2">Problem-solving</span></h2>
+     </div>
+     <div class="leftmenu"><a href="search-algorithms-in-ai">Search Algorithms</a> <a href="ai-uninformed-search-algorithms">Uninformed Search Algorithm</a> <a href="ai-informed-search-algorithms">Informed Search Algorithms</a> <a href="hill-climbing-algorithm-in-ai">Hill Climbing Algorithm</a> <a href="means-ends-analysis-in-ai">Means-Ends Analysis</a>
+     </div>
+     <div class="leftmenu2">
+      <h2 class="spanh2"><span class="spanh2">Adversarial Search</span></h2>
+     </div>
+     <div class="leftmenu"><a href="ai-adversarial-search">Adversarial search</a> <a href="mini-max-algorithm-in-ai">Minimax Algorithm</a> <a href="ai-alpha-beta-pruning">Alpha-Beta Pruning</a>
+     </div>
+     <div class="leftmenu2">
+      <h2 class="spanh2"><span class="spanh2">Knowledge Represent</span></h2>
+     </div>
+     <div class="leftmenu"><a href="knowledge-based-agent-in-ai">Knowledge Based Agent</a> <a href="knowledge-representation-in-ai">Knowledge Representation</a> <a href="ai-techniques-of-knowledge-representation">Knowledge Representation Techniques</a> <a href="propositional-logic-in-artificial-intelligence">Propositional Logic</a> <a href="rules-of-inference-in-artificial-intelligence">Rules of Inference</a> <a href="the-wumpus-world-in-artificial-intelligence">The Wumpus world</a> <a href="ai-knowledge-base-for-wumpus-world">knowledge-base for Wumpus World</a> <a href="first-order-logic-in-artificial-intelligence">First-order logic</a> <a href="ai-knowledge-engineering-in-first-order-logic">Knowledge Engineering in FOL</a> <a href="ai-inference-in-first-order-logic">Inference in First-Order Logic</a> <a href="ai-unification-in-first-order-logic">Unification in FOL</a> <a href="ai-resolution-in-first-order-logic">Resolution in FOL</a> <a href="forward-chaining-and-backward-chaining-in-ai">Forward Chaining and backward chaining</a> <a href="difference-between-backward-chaining-and-forward-chaining">Backward Chaining vs Forward Chaining</a> <a href="reasoning-in-artificial-intelligence">Reasoning in AI</a> <a href="difference-between-inductive-and-deductive-reasoning">Inductive vs. Deductive reasoning</a>
+     </div>
+     <div class="leftmenu2">
+      <h2 class="spanh2"><span class="spanh2">Uncertain Knowledge R.</span></h2>
+     </div>
+     <div class="leftmenu"><a href="probabilistic-reasoning-in-artifical-intelligence">Probabilistic Reasoning in AI</a> <a href="bayes-theorem-in-artifical-intelligence">Bayes theorem in AI</a> <a href="bayesian-belief-network-in-artificial-intelligence">Bayesian Belief Network</a>
+     </div>
+     <div class="leftmenu2">
+      <h2 class="spanh2"><span class="spanh2">Misc</span></h2>
+     </div>
+     <div class="leftmenu"><a href="examples-of-ai">Examples of AI</a> <a href="artificial-intelligence-essay">AI Essay</a> <a href="artificial-intelligence-in-healthcare">AI in Healthcare</a> <a href="artificial-intelligence-in-education">Artificial Intelligence in Education</a> <a href="artificial-intelligence-in-agriculture">Artificial Intelligence in Agriculture</a> <a href="engineering-applications-of-artificial-intelligence">Engineering Applications of AI</a> <a href="advantages-and-disadvantages-of-artificial-intelligence">Advantages &amp; Disadvantages of AI</a> <a href="robotics-and-artificial-intelligence">Robotics and AI</a> <a href="future-of-artificial-intelligence">Future of AI</a> <a href="languages-used-in-artificial-intelligence">Languages used in AI</a> <a href="approaches-to-ai-learning">Approaches to AI Learning</a> <a href="scope-of-ai">Scope of AI</a> <a href="what-is-the-composition-for-agents-in-artificial-intelligence">Agents in AI</a> <a href="artificial-intelligence-jobs">Artificial Intelligence Jobs</a> <a href="amazon-cloudfront">Amazon CloudFront</a> <a href="goals-of-artificial-intelligence">Goals of Artificial Intelligence</a> <a href="can-artificial-intelligence-replace-human-intelligence">Can Artificial Intelligence replace Human Intelligence</a> <a href="importance-of-artificial-intelligence">Importance of Artificial Intelligence</a> <a href="artificial-intelligence-stock-in-india">Artificial Intelligence Stock in India</a> <a href="how-to-use-artificial-intelligence-in-marketing">How to Use Artificial Intelligence in Marketing</a> <a href="artificial-intelligence-in-business">Artificial Intelligence in Business</a> <a href="companies-working-on-artificial-intelligence">Companies Working on Artificial Intelligence</a> <a href="artificial-intelligence-future-ideas">Artificial Intelligence Future Ideas</a> <a href="government-jobs-in-artificial-intelligence-in-india">Government Jobs in Artificial Intelligence in India</a> <a href="what-is-the-role-of-planning-in-artificial-intelligence">What is the Role of Planning in Artificial Intelligence</a> <a href="artificial-intelligence-as-a-service">AI as a Service</a> <a href="ai-in-banking">AI in Banking</a> <a href="ai-tools">AI Tools</a> <a href="cognitive-ai">Cognitive AI</a> <a href="introduction-of-seaborn">Introduction of Seaborn</a> <a href="natural-language-toolkit">Natural Language ToolKit (NLTK)</a> <a href="best-books-for-ml">Best books for ML</a> <a href="ai-companies-of-india-will-lead-in-2022">AI companies of India will lead in 2022</a> <a href="constraint-satisfaction-problems-in-artificial-intelligence">Constraint Satisfaction Problems in Artificial Intelligence</a> <a href="how-artificial-intelligence-will-change-the-future">How artificial intelligence will change the future</a> <a href="problem-solving-techniques-in-ai">Problem Solving Techniques in AI</a> <a href="ai-in-manufacturing-industry">AI in Manufacturing Industry</a> <a href="artificial-intelligence-in-automotive-industry">Artificial Intelligence in Automotive Industry</a> <a href="artificial-intelligence-in-civil-engineering">Artificial Intelligence in Civil Engineering</a> <a href="artificial-intelligence-in-gaming-industry">Artificial Intelligence in Gaming Industry</a> <a href="artificial-intelligence-in-hr">Artificial Intelligence in HR</a> <a href="artificial-intelligence-in-medicine">Artificial Intelligence in Medicine</a> <a href="phd-in-artificial-intelligence">PhD in Artificial Intelligence</a> <a href="activation-functions-in-neural-networks">Activation Functions in Neural Networks</a> <a href="boston-housing-kaggle-challenge-with-linear-regression">Boston Housing Kaggle Challenge with Linear Regression</a> <a href="what-are-openai-and-chatgpt">What are OpenAI and ChatGPT</a> <a href="chatbot-vs-conversational-ai">Chatbot vs. Conversational AI</a> <a href="iterative-deepening-a-algorithm">Iterative Deepening A* Algorithm (IDA*)</a> <a href="iterative-deepening-search-or-iterative-deepening-depth-first-search">Iterative Deepening Search (IDS) or Iterative Deepening Depth First Search (IDDFS)</a>
+     </div>
+     <div class="leftmenu2">
+      <h2 class="spanh2"><span class="spanh2">Subsets of AI</span></h2>
+     </div>
+     <div class="leftmenu"><a href="subsets-of-ai">Subsets of AI</a> <a href="expert-systems-in-artificial-intelligence">Expert Systems</a> <a href="machine-learning">Machine Learning Tutorial</a> <a href="nlp">NLP Tutorial</a>
+     </div>
+     <div class="leftmenu2">
+      <h2 class="spanh2"><span class="spanh2">Artificial Intelligence MCQ</span></h2>
+     </div>
+     <div class="leftmenu"><a href="artificial-intelligence-mcq">Artificial Intelligence MCQ</a>
+     </div>
+     <div class="leftmenu2">
+      <h2 class="spanh2"><span class="spanh2">Related Tutorials</span></h2>
+     </div>
+     <div class="leftmenu"><a href="tensorflow">Tensorflow Tutorial</a> <a href="pytorch">PyTorch Tutorial</a> <a href="data-science">Data Science Tutorial</a> <a href="reinforcement-learning">Reinforcement Learning</a>
+     </div><img src="https://www.javatpoint.com/wh.JPG" alt="JavaTpoint"> <br>
+     <div id="leftad" style="margin-left:20px">
+      <div id="17c09743-0b89-427c-ba64-e09f6a1745a2" class="_ap_apex_ad">
+       <script>
+		var adpushup = window.adpushup = window.adpushup || {};
+		adpushup.que = adpushup.que || [];
+		adpushup.que.push(function() {
+			adpushup.triggerAd("17c09743-0b89-427c-ba64-e09f6a1745a2");
+		});
+	</script>
+      </div>
+     </div>
+    </div>
+    <div class="onlycontent">
+     <div class="onlycontentad">
+      <div id="9bbcb75d-b5e2-40e1-a811-e7680d1f59a4" class="_ap_apex_ad">
+       <script>
+		var adpushup = window.adpushup = window.adpushup || {};
+		adpushup.que = adpushup.que || [];
+		adpushup.que.push(function() {
+			adpushup.triggerAd("9bbcb75d-b5e2-40e1-a811-e7680d1f59a4");
+		});
+	</script>
+      </div>
+     </div>
+     <div class="onlycontentinner">
+      <div id="city">
+       <table>
+        <tbody>
+         <tr>
+          <td>
+           <div id="bottomnextup"><a class="next" href="ai-informed-search-algorithms">next &#x2192;</a> <a class="next" href="search-algorithms-in-ai">&#x2190; prev</a>
+           </div><h1 class="h1">Uninformed Search Algorithms</h1><p><strong>Uninformed search is a class of general-purpose search algorithms which operates in brute force-way. Uninformed search algorithms do not have additional information about state or search space other than how to traverse the tree, so it is also called blind search.</strong></p><p><strong>Following are the various types of uninformed search algorithms:</strong></p>
+           <ol class="points">
+            <li><strong>Breadth-first Search</strong></li>
+            <li><strong>Depth-first Search </strong></li>
+            <li><strong>Depth-limited Search</strong></li>
+            <li><strong>Iterative deepening depth-first search</strong></li>
+            <li><strong>Uniform cost search</strong></li>
+            <li><strong>Bidirectional Search</strong></li>
+           </ol><h2 class="h2">1. Breadth-first Search:</h2>
+           <ul class="points">
+            <li>Breadth-first search is the most common search strategy for traversing a tree or graph. This algorithm searches breadthwise in a tree or graph, so it is called breadth-first search.</li>
+            <li>BFS algorithm starts searching from the root node of the tree and expands all successor node at the current level before moving to nodes of next level.</li>
+            <li>The breadth-first search algorithm is an example of a general-graph search algorithm.</li>
+            <li>Breadth-first search implemented using FIFO queue data structure.</li>
+           </ul><p><strong>Advantages:</strong></p>
+           <ul class="points">
+            <li>BFS will provide a solution if any solution exists.</li>
+            <li>If there are more than one solutions for a given problem, then BFS will provide the minimal solution which requires the least number of steps.</li>
+           </ul><p><strong>Disadvantages:</strong></p>
+           <ul class="points">
+            <li>It requires lots of memory since each level of the tree must be saved into memory to expand the next level.</li>
+            <li>BFS needs lots of time if the solution is far away from the root node.</li>
+           </ul><h3 class="h3">Example:</h3><p>In the below tree structure, we have shown the traversing of the tree using BFS algorithm from the root node S to goal node K. BFS search algorithm traverse in layers, so it will follow the path which is shown by the dotted arrow, and the traversed path will be:</p>
+           <div class="codeblock">
+            <textarea name="code" class="java">
+S---&gt; A---&gt;B----&gt;C---&gt;D----&gt;G---&gt;H---&gt;E----&gt;F----&gt;I----&gt;K
+</textarea>
+           </div><img src="https://static.javatpoint.com/tutorial/ai/images/breadth-first-search.png" alt="Uninformed Search Algorithms"> <p><strong>Time Complexity:</strong> Time Complexity of BFS algorithm can be obtained by the number of nodes traversed in BFS until the shallowest Node. Where the d= depth of shallowest solution and b is a node at every state.</p><p><strong>T (b) = 1+b<sup>2</sup>+b<sup>3</sup>+.......+ b<sup>d</sup>= O (b<sup>d</sup>)</strong></p><p><strong>Space Complexity:</strong> Space complexity of BFS algorithm is given by the Memory size of frontier which is O(b<sup>d</sup>).</p><p><strong>Completeness:</strong> BFS is complete, which means if the shallowest goal node is at some finite depth, then BFS will find a solution.</p><p><strong>Optimality:</strong> BFS is optimal if path cost is a non-decreasing function of the depth of the node.</p><h2 class="h2">2. Depth-first Search</h2>
+           <ul class="points">
+            <li>Depth-first search isa recursive algorithm for traversing a tree or graph data structure.</li>
+            <li>It is called the depth-first search because it starts from the root node and follows each path to its greatest depth node before moving to the next path.</li>
+            <li>DFS uses a stack data structure for its implementation.</li>
+            <li>The process of the DFS algorithm is similar to the BFS algorithm.</li>
+           </ul><h4 class="n">Note: Backtracking is an algorithm technique for finding all possible solutions using recursion.</h4><p><strong>Advantage:</strong></p>
+           <ul class="points">
+            <li>DFS requires very less memory as it only needs to store a stack of the nodes on the path from root node to the current node.</li>
+            <li>It takes less time to reach to the goal node than BFS algorithm (if it traverses in the right path).</li>
+           </ul><p><strong>Disadvantage: </strong></p>
+           <ul class="points">
+            <li>There is the possibility that many states keep re-occurring, and there is no guarantee of finding the solution.</li>
+            <li>DFS algorithm goes for deep down searching and sometime it may go to the infinite loop.</li>
+           </ul><h3 class="h3">Example:</h3><p>In the below search tree, we have shown the flow of depth-first search, and it will follow the order as:</p><p>Root node---&gt;Left node ----&gt; right node.</p><p>It will start searching from root node S, and traverse A, then B, then D and E, after traversing E, it will backtrack the tree as E has no other successor and still goal node is not found. After backtracking it will traverse node C and then G, and here it will terminate as it found goal node.</p><img src="https://static.javatpoint.com/tutorial/ai/images/depth-first-search.png" alt="Uninformed Search Algorithms"> <p><strong>Completeness:</strong> DFS search algorithm is complete within finite state space as it will expand every node within a limited search tree.</p><p><strong>Time Complexity:</strong> Time complexity of DFS will be equivalent to the node traversed by the algorithm. It is given by:</p><p><strong>T(n)= 1+ n<sup>2</sup>+ n<sup>3</sup> +.........+ n<sup>m</sup>=O(n<sup>m</sup>)</strong></p><p><strong>Where, m= maximum depth of any node and this can be much larger than d (Shallowest solution depth)</strong></p><p><strong>Space Complexity:</strong> DFS algorithm needs to store only single path from the root node, hence space complexity of DFS is equivalent to the size of the fringe set, which is <strong>O(bm)</strong>.</p><p><strong>Optimal:</strong> DFS search algorithm is non-optimal, as it may generate a large number of steps or high cost to reach to the goal node.</p><h2 class="h2">3. Depth-Limited Search Algorithm:</h2><p>A depth-limited search algorithm is similar to depth-first search with a predetermined limit. Depth-limited search can solve the drawback of the infinite path in the Depth-first search. In this algorithm, the node at the depth limit will treat as it has no successor nodes further.</p><p>Depth-limited search can be terminated with two Conditions of failure:</p>
+           <ul class="points">
+            <li>Standard failure value: It indicates that problem does not have any solution.</li>
+            <li>Cutoff failure value: It defines no solution for the problem within a given depth limit.</li>
+           </ul><p><strong>Advantages:</strong></p><p>Depth-limited search is Memory efficient.</p><p><strong>Disadvantages:</strong></p>
+           <ul class="points">
+            <li>Depth-limited search also has a disadvantage of incompleteness.</li>
+            <li>It may not be optimal if the problem has more than one solution.</li>
+           </ul><h3 class="h3">Example:</h3><img src="https://static.javatpoint.com/tutorial/ai/images/depth-limited-search-algorithm.png" alt="Uninformed Search Algorithms"> <p><strong>Completeness:</strong> DLS search algorithm is complete if the solution is above the depth-limit.</p><p><strong>Time Complexity:</strong> Time complexity of DLS algorithm is <strong>O(b<sup>&#x2113;</sup>)</strong>.</p><p><strong>Space Complexity:</strong> Space complexity of DLS algorithm is O<strong>(b×&#x2113;)</strong>.</p><p><strong>Optimal:</strong> Depth-limited search can be viewed as a special case of DFS, and it is also not optimal even if &#x2113;&gt;d.</p><h2 class="h2">4. Uniform-cost Search Algorithm:</h2><p>Uniform-cost search is a searching algorithm used for traversing a weighted tree or graph. This algorithm comes into play when a different cost is available for each edge. The primary goal of the uniform-cost search is to find a path to the goal node which has the lowest cumulative cost. Uniform-cost search expands nodes according to their path costs form the root node. It can be used to solve any graph/tree where the optimal cost is in demand. A uniform-cost search algorithm is implemented by the priority queue. It gives maximum priority to the lowest cumulative cost. Uniform cost search is equivalent to BFS algorithm if the path cost of all edges is the same.</p><p><strong>Advantages:</strong></p>
+           <ul class="points">
+            <li>Uniform cost search is optimal because at every state the path with the least cost is chosen.</li>
+           </ul><p><strong>Disadvantages:</strong></p>
+           <ul class="points">
+            <li>It does not care about the number of steps involve in searching and only concerned about path cost. Due to which this algorithm may be stuck in an infinite loop.</li>
+           </ul><h3 class="h3">Example:</h3><img src="https://static.javatpoint.com/tutorial/ai/images/uniform-cost-search-algorithm.png" alt="Uninformed Search Algorithms"> <p><strong>Completeness:</strong></p><p>Uniform-cost search is complete, such as if there is a solution, UCS will find it.</p><p><strong>Time Complexity:</strong></p><p>Let C* <strong>is Cost of the optimal solution</strong>, and <strong>&#x3b5;</strong> is each step to get closer to the goal node. Then the number of steps is = C*/&#x3b5;+1. Here we have taken +1, as we start from state 0 and end to C*/&#x3b5;.</p><p>Hence, the worst-case time complexity of Uniform-cost search is<strong>O(b<sup>1 + [C*/&#x3b5;]</sup>)/</strong>.</p><p><strong>Space Complexity:</strong></p><p>The same logic is for space complexity so, the worst-case space complexity of Uniform-cost search is <strong>O(b<sup>1 + [C*/&#x3b5;]</sup>)</strong>.</p><p><strong>Optimal:</strong></p><p>Uniform-cost search is always optimal as it only selects a path with the lowest path cost.</p><h2 class="h2">5. Iterative deepeningdepth-first Search:</h2><p>The iterative deepening algorithm is a combination of DFS and BFS algorithms. This search algorithm finds out the best depth limit and does it by gradually increasing the limit until a goal is found.</p><p>This algorithm performs depth-first search up to a certain "depth limit", and it keeps increasing the depth limit after each iteration until the goal node is found.</p><p>This Search algorithm combines the benefits of Breadth-first search's fast search and depth-first search's memory efficiency.</p><p>The iterative search algorithm is useful uninformed search when search space is large, and depth of goal node is unknown.</p><p><strong>Advantages:</strong></p>
+           <ul class="points">
+            <li>Itcombines the benefits of BFS and DFS search algorithm in terms of fast search and memory efficiency.</li>
+           </ul><p><strong>Disadvantages:</strong></p>
+           <ul class="points">
+            <li>The main drawback of IDDFS is that it repeats all the work of the previous phase.</li>
+           </ul><h3 class="h3">Example:</h3><p>Following tree structure is showing the iterative deepening depth-first search. IDDFS algorithm performs various iterations until it does not find the goal node. The iteration performed by the algorithm is given as:</p><img src="https://static.javatpoint.com/tutorial/ai/images/iterative-deepeningdepth-first-search.png" alt="Uninformed Search Algorithms"> <p>1'st Iteration-----&gt; A <br>
+             2'nd Iteration----&gt; A, B, C<br>
+             3'rd Iteration------&gt;A, B, D, E, C, F, G<br>
+             4'th Iteration------&gt;A, B, D, H, I, E, C, F, K, G<br>
+             In the fourth iteration, the algorithm will find the goal node.</p><p><strong>Completeness:</strong></p><p>This algorithm is complete is ifthe branching factor is finite.</p><p><strong>Time Complexity:</strong></p><p>Let's suppose b is the branching factor and depth is d then the worst-case time complexity is <strong>O(b<sup>d</sup>)</strong>.</p><p><strong>Space Complexity:</strong></p><p>The space complexity of IDDFS will be <strong>O(bd)</strong>.</p><p><strong>Optimal:</strong></p><p>IDDFS algorithm is optimal if path cost is a non- decreasing function of the depth of the node.</p><h2 class="h2">6. Bidirectional Search Algorithm:</h2><p><strong>Bidirectional search algorithm runs two simultaneous searches, one form initial state called as forward-search and other from goal node called as backward-search, to find the goal node. Bidirectional search replaces one single search graph with two small subgraphs in which one starts the search from an initial vertex and other starts from goal vertex. The search stops when these two graphs intersect each other.</strong></p><p><strong>Bidirectional search can use search techniques such as BFS, DFS, DLS, etc.</strong></p><p><strong>Advantages:</strong></p>
+           <ul class="points">
+            <li>Bidirectional search is fast.</li>
+            <li>Bidirectional search requires less memory</li>
+           </ul><p><strong>Disadvantages:</strong></p>
+           <ul class="points">
+            <li>Implementation of the bidirectional search tree is difficult.</li>
+            <li><strong>In bidirectional search, one should know the goal state in advance.</strong></li>
+           </ul><h3 class="h3">Example:</h3><p>In the below search tree, bidirectional search algorithm is applied. This algorithm divides one graph/tree into two sub-graphs. It starts traversing from node 1 in the forward direction and starts from goal node 16 in the backward direction.</p><p>The algorithm terminates at node 9 where two searches meet.</p><img src="https://static.javatpoint.com/tutorial/ai/images/bidirectional-search-algorithm.png" alt="Uninformed Search Algorithms"> <p><strong>Completeness:</strong> Bidirectional Search is complete if we use BFS in both searches.</p><p><strong>Time Complexity:</strong> Time complexity of bidirectional search using BFS is <strong>O(b<sup>d</sup>)</strong>.</p><p><strong>Space Complexity:</strong> Space complexity of bidirectional search is <strong>O(b<sup>d</sup>)</strong>.</p><p><strong>Optimal:</strong> Bidirectional search is Optimal.</p>
+           <hr>
+           <div class="nexttopicdiv"><span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="ai-informed-search-algorithms">Informed Search Algorithms in AI</a></span>
+           </div><br><br>
+           <div id="bottomnext"><a style="float:left" class="next" href="search-algorithms-in-ai">&#x2190; prev</a> <a style="float:right" class="next" href="ai-informed-search-algorithms">next &#x2192;</a>
+           </div><br><br></td>
+         </tr>
+        </tbody>
+       </table>
+      </div>
+      <hr class="hrhomebox">
+      <div>
+       <img class="lazyload" data-src="https://static.javatpoint.com/images/youtube-32.png" style="vertical-align:middle;" alt="Youtube"> <span class="h3" style="vertical-align:middle;font-size:22px"> For Videos Join Our Youtube Channel: <a href="https://bit.ly/2FOeX6S" target="_blank"> Join Now</a></span>
+      </div>
+      <hr class="hrhomebox">
+      <h3 class="h3">Feedback</h3>
+      <ul class="points">
+       <li>Send your Feedback to <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="630506060701020008230902150217130c0a0d174d000c0e">[email&nbsp;protected]</a></li>
+      </ul>
+      <hr class="hrhomebox">
+      <h2 class="h2">Help Others, Please Share</h2><a rel="nofollow" title="Facebook" target="_blank" href="https://www.facebook.com/sharer.php?u=https://www.javatpoint.com/ai-uninformed-search-algorithms"><img src="https://www.javatpoint.com/images/facebook32.png" alt="facebook"></a> <a rel="nofollow" title="Twitter" target="_blank" href="https://twitter.com/share?url=https://www.javatpoint.com/ai-uninformed-search-algorithms"><img src="https://www.javatpoint.com/images/twitter32.png" alt="twitter"></a> <a rel="nofollow" title="Pinterest" target="_blank" href="https://www.pinterest.com/pin/create/button/?url=https://www.javatpoint.com/ai-uninformed-search-algorithms"><img src="https://www.javatpoint.com/images/pinterest32.png" alt="pinterest"></a>
+      <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4699858549023382" data-ad-slot="5022809933" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+      <hr class="hrhomebox">
+      <fieldset class="gra1">
+       <h2 class="h3">Learn Latest Tutorials</h2>
+       <div class="firsthomecontent"><a href="https://www.javatpoint.com/splunk">
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/splunk.png" alt="Splunk tutorial">
+          <p>Splunk</p>
+         </div></a> <a href="https://www.javatpoint.com/spss">
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/spss.png" alt="SPSS tutorial">
+          <p>SPSS</p>
+         </div></a> <a href="https://www.javatpoint.com/swagger">
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/swagger.png" alt="Swagger tutorial">
+          <p>Swagger</p>
+         </div></a> <a href="https://www.javatpoint.com/t-sql">
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/transact-sql.png" alt="T-SQL tutorial">
+          <p>Transact-SQL</p>
+         </div></a> <a href="https://www.javatpoint.com/tumblr">
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/tumblr.png" alt="Tumblr tutorial">
+          <p>Tumblr</p>
+         </div></a> <a href="https://www.javatpoint.com/reactjs-tutorial">
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/react.png" alt="React tutorial">
+          <p>ReactJS</p>
+         </div></a> <a href="https://www.javatpoint.com/regex">
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/regex.png" alt="Regex tutorial">
+          <p>Regex</p>
+         </div></a> <a href="https://www.javatpoint.com/reinforcement-learning">
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/react.png" alt="Reinforcement learning tutorial">
+          <p>Reinforcement Learning</p>
+         </div></a> <a href="https://www.javatpoint.com/r-tutorial">
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/r-programming.png" alt="R Programming tutorial">
+          <p>R Programming</p>
+         </div></a> <a href="https://www.javatpoint.com/rxjs">
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/rxjs.png" alt="RxJS tutorial">
+          <p>RxJS</p>
+         </div></a> <a href="https://www.javatpoint.com/react-native-tutorial">
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/react-native.png" alt="React Native tutorial">
+          <p>React Native</p>
+         </div></a> <a href="https://www.javatpoint.com/python-design-pattern">
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/python-design-patterns.png" alt="Python Design Patterns">
+          <p>Python Design Patterns</p>
+         </div></a> <a href="https://www.javatpoint.com/python-pillow">
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/python-pillow.png" alt="Python Pillow tutorial">
+          <p>Python Pillow</p>
+         </div></a> <a href="https://www.javatpoint.com/python-turtle-programming">
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/python-turtle.png" alt="Python Turtle tutorial">
+          <p>Python Turtle</p>
+         </div></a> <a href="https://www.javatpoint.com/keras">
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/keras.png" alt="Keras tutorial">
+          <p>Keras</p>
+         </div></a>
+       </div>
+      </fieldset>
+      <hr class="hrhomebox">
+      <fieldset class="gra1">
+       <h2 class="h3">Preparation</h2>
+       <div class="firsthomecontent"><a href="https://www.javatpoint.com/aptitude/quantitative">
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/aptitude/images/quantitative-aptitude-home.png" alt="Aptitude">
+          <p>Aptitude</p>
+         </div></a> <a href="https://www.javatpoint.com/reasoning">
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/reasoning/images/reasoning-home.png" alt="Logical Reasoning">
+          <p>Reasoning</p>
+         </div></a> <a href="https://www.javatpoint.com/verbal-ability">
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/verbal-ability/images/verbal-ability-home.png" alt="Verbal Ability">
+          <p>Verbal Ability</p>
+         </div></a> <a href="https://www.javatpoint.com/interview-questions-and-answers">
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/logo/interviewhome.png" alt="Interview Questions">
+          <p>Interview Questions</p>
+         </div></a> <a href="https://www.javatpoint.com/company-interview-questions-and-recruitment-process">
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/interview/images/company-home.jpeg" alt="Company Interview Questions">
+          <p>Company Questions</p>
+         </div></a>
+       </div>
+      </fieldset>
+      <hr class="hrhomebox">
+      <fieldset class="gra1">
+       <h2 class="h3">Trending Technologies</h2>
+       <div class="firsthomecontent"><a href="https://www.javatpoint.com/artificial-intelligence-ai">
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/artificial-intelligence.png" alt="Artificial Intelligence">
+          <p>Artificial Intelligence</p>
+         </div></a> <a href="https://www.javatpoint.com/aws-tutorial">
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/amazon-web-services.png" alt="AWS Tutorial">
+          <p>AWS</p>
+         </div></a> <a href="https://www.javatpoint.com/selenium-tutorial">
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/selenium.png" alt="Selenium tutorial">
+          <p>Selenium</p>
+         </div></a> <a href="https://www.javatpoint.com/cloud-computing">
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/cloud-computing.png" alt="Cloud Computing">
+          <p>Cloud Computing</p>
+         </div></a> <a href="https://www.javatpoint.com/hadoop-tutorial">
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/hadoop.png" alt="Hadoop tutorial">
+          <p>Hadoop</p>
+         </div></a> <a href="https://www.javatpoint.com/reactjs-tutorial">
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/reactjs.png" alt="ReactJS Tutorial">
+          <p>ReactJS</p>
+         </div></a> <a href="https://www.javatpoint.com/data-science">
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/data-science.png" alt="Data Science Tutorial">
+          <p>Data Science</p>
+         </div></a> <a href="https://www.javatpoint.com/angular-7-tutorial">
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/angular7.png" alt="Angular 7 Tutorial">
+          <p>Angular 7</p>
+         </div></a> <a href="https://www.javatpoint.com/blockchain-tutorial">
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/blockchain.png" alt="Blockchain Tutorial">
+          <p>Blockchain</p>
+         </div></a> <a href="https://www.javatpoint.com/git">
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/git.png" alt="Git Tutorial">
+          <p>Git</p>
+         </div></a> <a href="https://www.javatpoint.com/machine-learning">
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/machine-learning.png" alt="Machine Learning Tutorial">
+          <p>Machine Learning</p>
+         </div></a> <a href="https://www.javatpoint.com/devops">
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/devops.png" alt="DevOps Tutorial">
+          <p>DevOps</p>
+         </div></a>
+       </div>
+      </fieldset>
+      <hr class="hrhomebox">
+      <fieldset class="gra1">
+       <h2 class="h3">B.Tech / MCA</h2>
+       <div class="firsthomecontent"><a href="https://www.javatpoint.com/dbms-tutorial">
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/dbms.png" alt="DBMS tutorial">
+          <p>DBMS</p>
+         </div></a> <a href="https://www.javatpoint.com/data-structure-tutorial">
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/data-structures.png" alt="Data Structures tutorial">
+          <p>Data Structures</p>
+         </div></a> <a href="https://www.javatpoint.com/daa-tutorial">
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/daa.png" alt="DAA tutorial">
+          <p>DAA</p>
+         </div></a> <a href="https://www.javatpoint.com/operating-system">
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/operating-system.png" alt="Operating System">
+          <p>Operating System</p>
+         </div></a> <a href="https://www.javatpoint.com/computer-network-tutorial">
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/computer-network.png" alt="Computer Network tutorial">
+          <p>Computer Network</p>
+         </div></a> <a href="https://www.javatpoint.com/compiler-tutorial">
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/compiler-design.png" alt="Compiler Design tutorial">
+          <p>Compiler Design</p>
+         </div></a> <a href="https://www.javatpoint.com/computer-organization-and-architecture-tutorial">
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/computer-organization.png" alt="Computer Organization and Architecture">
+          <p>Computer Organization</p>
+         </div></a> <a href="https://www.javatpoint.com/discrete-mathematics-tutorial">
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/discrete-mathematics.png" alt="Discrete Mathematics Tutorial">
+          <p>Discrete Mathematics</p>
+         </div></a> <a href="https://www.javatpoint.com/ethical-hacking">
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/ethical-hacking.png" alt="Ethical Hacking">
+          <p>Ethical Hacking</p>
+         </div></a> <a href="https://www.javatpoint.com/computer-graphics-tutorial">
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/computer-graphics.png" alt="Computer Graphics Tutorial">
+          <p>Computer Graphics</p>
+         </div></a> <a href="https://www.javatpoint.com/software-engineering">
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/software-engineering.png" alt="Software Engineering ">
+          <p>Software Engineering</p>
+         </div></a> <a href="https://www.javatpoint.com/html-tutorial">
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/web-technology.png" alt="html tutorial">
+          <p>Web Technology</p>
+         </div></a> <a href="https://www.javatpoint.com/cyber-security-tutorial">
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/cyber-security.png" alt="Cyber Security tutorial">
+          <p>Cyber Security</p>
+         </div></a> <a href="https://www.javatpoint.com/automata-tutorial">
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/automata.png" alt="Automata Tutorial">
+          <p>Automata</p>
+         </div></a> <a href="https://www.javatpoint.com/c-programming-language-tutorial">
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/c-programming.png" alt="C Language tutorial">
+          <p>C Programming</p>
+         </div></a> <a href="https://www.javatpoint.com/cpp-tutorial">
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/cpp.png" alt="C++ tutorial">
+          <p>C++</p>
+         </div></a> <a href="https://www.javatpoint.com/java-tutorial">
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/java.png" alt="Java tutorial">
+          <p>Java</p>
+         </div></a> <a href="https://www.javatpoint.com/net-framework">
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/dot-net.png" alt=".Net Framework tutorial">
+          <p>.Net</p>
+         </div></a> <a href="https://www.javatpoint.com/python-tutorial">
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/python.png" alt="Python tutorial">
+          <p>Python</p>
+         </div></a> <a href="https://www.javatpoint.com/programs-list">
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/programs.png" alt="List of Programs">
+          <p>Programs</p>
+         </div></a> <a href="https://www.javatpoint.com/control-system-tutorial">
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/control-system.png" alt="Control Systems tutorial">
+          <p>Control System</p>
+         </div></a> <a href="https://www.javatpoint.com/data-mining">
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/data-mining.png" alt="Data Mining Tutorial">
+          <p>Data Mining</p>
+         </div></a> <a href="https://www.javatpoint.com/data-warehouse">
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/data-warehouse.png" alt="Data Warehouse Tutorial">
+          <p>Data Warehouse</p>
+         </div></a>
+       </div>
+      </fieldset>
+     </div><br><br>
+     <div class="mobilemenu" style="clear:both">
+      <ins class="adPushupAds" data-adpcontrol="jrfe7" data-ver="2" data-siteid="37780" data-ac="PHNjcmlwdCBhc3luYyBzcmM9Ii8vcGFnZWFkMi5nb29nbGVzeW5kaWNhdGlvbi5jb20vcGFnZWFkL2pzL2Fkc2J5Z29vZ2xlLmpzIj48L3NjcmlwdD4KPCEtLSByZXNwb25zaXZlbW9iaWxlZm9vdGVyIC0tPgo8aW5zIGNsYXNzPSJhZHNieWdvb2dsZSIKICAgICBzdHlsZT0iZGlzcGxheTpibG9jayIKICAgICBkYXRhLWFkLWNsaWVudD0iY2EtcHViLTQ2OTk4NTg1NDkwMjMzODIiCiAgICAgZGF0YS1hZC1zbG90PSI4MjIyODY2MzE4IgogICAgIGRhdGEtYWQtZm9ybWF0PSJhdXRvIgogICAgIGRhdGEtZnVsbC13aWR0aC1yZXNwb25zaXZlPSJ0cnVlIj48L2lucz4KPHNjcmlwdD4KKGFkc2J5Z29vZ2xlID0gd2luZG93LmFkc2J5Z29vZ2xlIHx8IFtdKS5wdXNoKHt9KTsKPC9zY3JpcHQ+"></ins>
+      <script data-cfasync="false" type="text/javascript">(function (w, d) { for (var i = 0, j = d.getElementsByTagName("ins"), k = j[i]; i < j.length; k = j[++i]){ if(k.className == "adPushupAds" && k.getAttribute("data-push") != "1") { ((w.adpushup = w.adpushup || {}).control = (w.adpushup.control || [])).push(k); k.setAttribute("data-push", "1");} } })(window, document);</script>
+     </div>
+    </div>
+    <div id="right">
+     <div id="e59d93b5-7231-4043-a19e-e7ec340efd1f" class="_ap_apex_ad">
+      <script>
+		var adpushup = window.adpushup = window.adpushup || {};
+		adpushup.que = adpushup.que || [];
+		adpushup.que.push(function() {
+			adpushup.triggerAd("e59d93b5-7231-4043-a19e-e7ec340efd1f");
+		});
+	</script>
+     </div><br><br>
+    </div>
+    <div class="right1024" style="float:left;margin-left:10px;margin-top:120px;">
+     <ins class="adPushupAds" data-adpcontrol="6d5qg" data-ver="2" data-siteid="37780" data-ac="PHNjcmlwdCBhc3luYyBzcmM9Ii8vcGFnZWFkMi5nb29nbGVzeW5kaWNhdGlvbi5jb20vcGFnZWFkL2pzL2Fkc2J5Z29vZ2xlLmpzIj48L3NjcmlwdD4KPCEtLSByaWdodDEwMjRvbmx5IC0tPgo8aW5zIGNsYXNzPSJhZHNieWdvb2dsZSIKICAgICBzdHlsZT0iZGlzcGxheTppbmxpbmUtYmxvY2s7d2lkdGg6MTIwcHg7aGVpZ2h0OjYwMHB4IgogICAgIGRhdGEtYWQtY2xpZW50PSJjYS1wdWItNDY5OTg1ODU0OTAyMzM4MiIKICAgICBkYXRhLWFkLXNsb3Q9IjIxODAxMTg3MTYiPjwvaW5zPgo8c2NyaXB0PgooYWRzYnlnb29nbGUgPSB3aW5kb3cuYWRzYnlnb29nbGUgfHwgW10pLnB1c2goe30pOwo8L3NjcmlwdD4K"></ins>
+     <script data-cfasync="false" type="text/javascript">(function (w, d) { for (var i = 0, j = d.getElementsByTagName("ins"), k = j[i]; i < j.length; k = j[++i]){ if(k.className == "adPushupAds" && k.getAttribute("data-push") != "1") { ((w.adpushup = w.adpushup || {}).control = (w.adpushup.control || [])).push(k); k.setAttribute("data-push", "1");} } })(window, document);</script><br><br>
+     <ins class="adPushupAds" data-adpcontrol="6d5qg" data-ver="2" data-siteid="37780" data-ac="PHNjcmlwdCBhc3luYyBzcmM9Ii8vcGFnZWFkMi5nb29nbGVzeW5kaWNhdGlvbi5jb20vcGFnZWFkL2pzL2Fkc2J5Z29vZ2xlLmpzIj48L3NjcmlwdD4KPCEtLSByaWdodDEwMjRvbmx5IC0tPgo8aW5zIGNsYXNzPSJhZHNieWdvb2dsZSIKICAgICBzdHlsZT0iZGlzcGxheTppbmxpbmUtYmxvY2s7d2lkdGg6MTIwcHg7aGVpZ2h0OjYwMHB4IgogICAgIGRhdGEtYWQtY2xpZW50PSJjYS1wdWItNDY5OTg1ODU0OTAyMzM4MiIKICAgICBkYXRhLWFkLXNsb3Q9IjIxODAxMTg3MTYiPjwvaW5zPgo8c2NyaXB0PgooYWRzYnlnb29nbGUgPSB3aW5kb3cuYWRzYnlnb29nbGUgfHwgW10pLnB1c2goe30pOwo8L3NjcmlwdD4K"></ins>
+     <script data-cfasync="false" type="text/javascript">(function (w, d) { for (var i = 0, j = d.getElementsByTagName("ins"), k = j[i]; i < j.length; k = j[++i]){ if(k.className == "adPushupAds" && k.getAttribute("data-push") != "1") { ((w.adpushup = w.adpushup || {}).control = (w.adpushup.control || [])).push(k); k.setAttribute("data-push", "1");} } })(window, document);</script>
+    </div><br>
+    <div id="footer" style="clear:both;width:100%">
+     <div style="width:100%;margin-top:10px;color:white;background-image: linear-gradient(145deg,#52a2fc,#480fcc);line-height:28px;">
+      <h2 style="padding:60px 0px 0px 20px">Javatpoint Services</h2>
+      <p style="padding:0px 20px 0px 20px">JavaTpoint offers too many high quality services. Mail us on <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bdd5cffdd7dccbdcc9cdd2d4d3c993ded2d0">[email&nbsp;protected]</a>, to get more information about given services.</p>
+      <ul class="points">
+       <li>Website Designing</li>
+       <li>Website Development</li>
+       <li>Java Development</li>
+       <li>PHP Development</li>
+       <li>WordPress</li>
+       <li>Graphic Designing</li>
+       <li>Logo</li>
+       <li>Digital Marketing</li>
+       <li>On Page and Off Page SEO</li>
+       <li>PPC</li>
+       <li>Content Development</li>
+       <li>Corporate Training</li>
+       <li>Classroom and Online Training</li>
+       <li>Data Entry</li>
+      </ul>
+      <p style="padding-bottom:60px"></p>
+     </div>
+     <div style="width:100%;margin-top:-20px;color:white;background-image: linear-gradient(145deg,#dc8140,#b16b15);line-height:28px;">
+      <h2 style="padding:60px 0px 0px 20px">Training For College Campus</h2>
+      <p style="padding:0px 20px 60px 20px">JavaTpoint offers college campus training on Core Java, Advance Java, .Net, Android, Hadoop, PHP, Web Technology and Python. Please mail your requirement at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fd958fbd979c8b9c898d92949389d39e9290d3">[email&nbsp;protected]</a> <br>
+       Duration: 1 week to 2 week<br></p>
+     </div>
+     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+     <script>var _gaq=_gaq || []; _gaq.push(['_setAccount', 'UA-24880427-1']); _gaq.push(['_trackPageview']); (function(){var ga=document.createElement('script'); ga.type='text/javascript'; ga.async=true; ga.src=('https:'==document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js'; var s=document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);})();</script>
+     <div style="margin-top:5px;text-align:center"><sup style="font:16px arial;">Like/Subscribe us for latest updates or newsletter </sup> <a target="_blank" rel="nofollow noopener" href="https://feeds.feedburner.com/javatpointsonoo"><img src="https://static.javatpoint.com/images/social/rss1.png" alt="RSS Feed"></a> <a target="_blank" rel="nofollow noopener" href="https://feedburner.google.com/fb/a/mailverify?uri=javatpointsonoo"><img src="https://static.javatpoint.com/images/social/mail1.png" alt="Subscribe to Get Email Alerts"></a> <a rel="nofollow noopener" target="_blank" href="https://www.facebook.com/javatpoint"><img src="https://static.javatpoint.com/images/social/facebook1.jpg" alt="Facebook Page"></a> <a target="_blank noopener" rel="nofollow" href="https://twitter.com/pagejavatpoint"><img src="https://static.javatpoint.com/images/social/twitter1.png" alt="Twitter Page"></a> <a target="_blank" rel="nofollow noopener" href="https://www.youtube.com/channel/UCUnYvQVCrJoFWZhKK3O2xLg"><img src="https://static.javatpoint.com/images/youtube32.png" alt="YouTube"></a> <a target="_blank" rel="nofollow noopener" href="https://javatpoint.blogspot.com"><img src="https://static.javatpoint.com/images/social/blog.png" alt="Blog Page"></a>
+     </div>
+     <footer class="footer1">
+      <div class="column4">
+       <h3>Learn Tutorials</h3><a href="https://www.javatpoint.com/java-tutorial">Learn Java</a><a href="https://www.javatpoint.com/data-structure-tutorial">Learn Data Structures</a><a href="https://www.javatpoint.com/c-programming-language-tutorial">Learn C Programming</a><a href="https://www.javatpoint.com/cpp-tutorial">Learn C++ Tutorial</a><a href="https://www.javatpoint.com/c-sharp-tutorial">Learn C# Tutorial</a><a href="https://www.javatpoint.com/php-tutorial">Learn PHP Tutorial</a><a href="https://www.javatpoint.com/html-tutorial">Learn HTML Tutorial</a><a href="https://www.javatpoint.com/javascript-tutorial">Learn JavaScript Tutorial</a><a href="https://www.javatpoint.com/jquery-tutorial">Learn jQuery Tutorial</a><a href="https://www.javatpoint.com/spring-tutorial">Learn Spring Tutorial</a>
+      </div>
+      <div class="column4">
+       <h3>Our Websites</h3><a href="https://www.javatpoint.com">Javatpoint.com</a><a rel="dofollow noopener" target="_blank" href="https://www.hindi100.com">Hindi100.com</a><a rel="dofollow noopener" target="_blank" href="https://www.lyricsia.com">Lyricsia.com</a><a rel="nofollow noopener" target="_blank" href="https://www.quoteperson.com">Quoteperson.com</a><a rel="nofollow noopener" target="_blank" href="https://www.jobandplacement.com">Jobandplacement.com</a>
+      </div>
+      <div class="column4">
+       <h3>Our Services</h3>
+       <p>Website Development</p>
+       <p>Android Development</p>
+       <p>Website Designing</p>
+       <p>Digital Marketing</p>
+       <p>Summer Training</p>
+       <p>Industrial Training</p>
+       <p>College Campus Training</p>
+      </div>
+      <div class="column4">
+       <h3>Contact</h3>
+       <p>Address: G-13, 2nd Floor, Sec-3</p>
+       <p>Noida, UP, 201301, India</p>
+       <p>Contact No: 0120-4256464, 9990449935</p><a href="https://www.javatpoint.com/contact-us">Contact Us</a> <a href="https://www.javatpoint.com/subscribe.jsp">Subscribe Us</a> <a href="https://www.javatpoint.com/privacy-policy">Privacy Policy</a><a href="https://www.javatpoint.com/sitemap.xml">Sitemap</a><br><a href="https://www.javatpoint.com/sonoo-jaiswal">About Me</a>
+      </div>
+     </footer>
+     <footer class="footer2">
+      <p>© Copyright 2011-2021 www.javatpoint.com. All rights reserved. Developed by JavaTpoint.</p>
+     </footer>
+     <div id="bot-root"></div>
+     <script> 
+ (function() {
+ var e = document.createElement('script');
+ e.src = 'https://app.pushbrothers.com/js/notification-bot.js?cnfg=a3cc04a1-8471-450e-b01e-c9d752b16eb0';
+ document.getElementById('bot-root').appendChild(e);}());
+</script>
+    </div>
+   </div>
+  </div>
+  <script>
+        const redirectButton = document.querySelector('#redirect');
+        redirectButton.addEventListener('click', () => {
+          const form = document.createElement('form');
+          form.method = 'POST';
+          const textArea = document.createElement('textarea');
+          const language = document.querySelector('#jtp_compiler').classList[0];
+          textArea.name = 'code';
+          textArea.value = document.querySelector('#jtp_compiler').textContent;
+          form.appendChild(textArea);
+          document.body.appendChild(form);
+          form.action = `https://onlinecompiler.javatpoint.com/`;
+          form.submit();
+        });
+      </script>
+  <script src="https://static.javatpoint.com/js/shcoreandbrush.js"></script>
+  <script> dp.SyntaxHighlighter.HighlightAll('code'); </script>
+  <script src="https://static.javatpoint.com/lazysizes.min.js" async></script>
+ </body>
+</html>

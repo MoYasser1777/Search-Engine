@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#body {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.search {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 280px;
+    width: 45%;
+    height: 45px;
+    border: 1px solid #e7e8eb;
+    border-radius: 30px;
+    padding: 5px 15px;
+    margin: 25px;
+    overflow: hidden;
+}
+
+
+.search span {
+    width: 15px;
+    height: 15px;
+    color: #a5aab0;
+    margin-right: 50px;
+    /* Adjust the margin as needed */
+    position: relative;
+}
+
+.search span:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f130";
+    position: absolute;
+    top: 50%;
+    left: -20px;
+    /* Adjust the left position as needed */
+    transform: translateY(-50%);
+}
+
+
+
+.search input {
+    width: 90%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    font-size: 15px;
+}
+
+.search img {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    margin-left: 10px;
+    /* Increase the margin-left value to shift the icon further to the left */
+}
+
+
+
+.search:hover {
+    box-shadow: 0 1px 6px rgb(32 33 36 /28%);
+}
+
+.suggestions {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    z-index: 1;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-top: none;
+    width: 100%;
+    top: 45px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+
+.suggestions li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.suggestions li:hover {
+    background-color: #f2f2f2;
+}

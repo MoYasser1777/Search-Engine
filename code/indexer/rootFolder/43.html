@@ -1,0 +1,740 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Learn CSS Tutorial - javatpoint</title>
+  <link rel="SHORTCUT ICON" href="https://static.javatpoint.com/images/favicon2.png"> 
+  <link rel="stylesheet" type="text/css" href="https://static.javatpoint.com/link.css?v=5.5" async>
+  <link rel="dns-prefetch" href="https://clients1.google.com">
+  <link rel="dns-prefetch" href="https://static.javatpoint.com">
+  <link rel="dns-prefetch" href="https://googleads.g.doubleclick.net">
+  <link rel="dns-prefetch" href="https://www.google.com">
+  <link rel="dns-prefetch" href="https://feedify.net">
+  <meta name="theme-color" content="#4CAF50">
+  <meta property="og:title" content="Learn CSS Tutorial - javatpoint">
+  <meta property="og:description" content="Learn CSS Tutorial for beginners and professionals with examples on inline, file, selector, background, border, display, float, font, margin, opacity, overflow, padding, position."> 
+  <meta name="keywords" content="css, tutorial, beginners, professionals, introduction, example, inline, file, selector, background, border, display, float, font, margin, opacity, overflow, padding, position">
+  <meta name="description" content="Learn CSS Tutorial for beginners and professionals with examples on inline, file, selector, background, border, display, float, font, margin, opacity, overflow, padding, position.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="canonical" href="https://www.javatpoint.com/css-tutorial"> 
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+  <meta name="twitter:title" property="og:title" content="Learn CSS Tutorial - javatpoint">
+  <meta name="twitter:description" property="og:description" content="Learn CSS Tutorial for beginners and professionals with examples on inline, file, selector, background, border, display, float, font, margin, opacity, overflow, padding, position.">
+  <meta property="og:url" content="https://www.javatpoint.com/css-tutorial">
+  <meta property="og:site_name" content="www.javatpoint.com">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@pagejavatpoint">
+  <meta name="twitter:domain" content="www.javatpoint.com">
+  <meta name="twitter:creator" content="@pagejavatpoint"> 
+  <link href="https://www.javatpoint.com/manifest.json" rel="manifest"> 
+  <script data-cfasync="false" type="text/javascript">(function(w, d) { var s = d.createElement('script'); s.src = '//delivery.adrecover.com/37784/adRecover.js?ts=1543562646174'; s.type = 'text/javascript'; s.async = true; (d.getElementsByTagName('head')[0] || d.getElementsByTagName('body')[0]).appendChild(s); })(window, document);</script> 
+  <script data-cfasync="false" type="text/javascript">
+(function (w, d) {
+  var siteId = "37780";
+  var targetElement =
+    d.getElementsByTagName("head")[0] || d.getElementsByTagName("body")[0];
+  var s = d.createElement("script");
+  s.src = "//cdn.adpushup.com/" + siteId + "/adpushup.js";
+  s.crossOrigin = "anonymous";
+  s.type = "text/javascript";
+  s.async = true;
+  targetElement.appendChild(s);
+  function sendErrorLog(log) {
+    var eventName = "script_error";
+    log.siteId = siteId;
+    var data = btoa(JSON.stringify(log));
+    var img = document.createElement("img");
+    img.src =
+      "https://aplogger.adpushup.com/log?event=HC_" + eventName + "&data=" + data;
+  }
+  var searchParams =
+    typeof URLSearchParams === "function" &&
+    new URLSearchParams(window.location.search);
+  if (searchParams) {
+    var isDebugModeOn = searchParams.has("apDebug");
+  }
+  w.addEventListener("error", function (event) {
+    try {
+      var filename = event.filename || "";
+      if (filename.indexOf("/" + siteId + "/adpushup.js") === -1) {
+        return;
+      }
+      var error = event.error;
+      if (error) {
+        var message = error.message;
+        var stack = error.stack;
+      }
+      message = message || event.message;
+      var log = {
+        message: message,
+        stack: stack || "",
+        timestamp: Math.floor(event.timeStamp),
+        type: "uncaughterror",
+      };
+      sendErrorLog(log);
+      !isDebugModeOn && event.preventDefault();
+    } catch (error) {}
+  });
+  w.addEventListener("unhandledrejection", function (event) {
+    var reason = event.reason;
+    if (typeof reason === "object") reason = JSON.stringify(reason);
+    var log = {
+      message: reason || "no reason found",
+      timestamp: Math.floor(event.timeStamp),
+      type: "unhandledrejection",
+    };
+    sendErrorLog(log);
+    !isDebugModeOn && event.preventDefault();
+  });
+  var ga = d.createElement("script");
+  ga.src = "https://www.googletagmanager.com/gtag/js?id=G-Z0TZ7TDHS1";
+  ga.type = "text/javascript";
+  ga.async = true;
+  targetElement.appendChild(ga);
+  w.dataLayer = window.dataLayer || [];
+  w.gtag = function () {
+    window.dataLayer.push(arguments);
+  };
+  w.gtag("js", new Date());
+  w.gtag("config", "G-Z0TZ7TDHS1", {
+    custom_map: { dimension1: "siteid" },
+  });
+  w.gtag("event", "script-call", {
+    send_to: "G-Z0TZ7TDHS1",
+    siteid: siteId,
+  });
+  s.onerror = function (msg) {
+    w.gtag("event", "ad-block", {
+      send_to: "G-Z0TZ7TDHS1",
+      siteid: siteId,
+    });
+  };
+})(window, document);
+</script> 
+ </head> 
+ <body onload="highlightlink()"> 
+  <div id="page" style="margin:-8px;background-color:#f5f5f4;">
+   <div id="container"> 
+    <div class="header">
+     <table style="width:100%;margin-bottom:5px"> 
+      <tbody>
+       <tr> 
+        <td> 
+         <div style="clear:both;float:left;width:230px;margin-top:15px;margin-left:20px"> <a href="https://www.javatpoint.com"><img src="https://static.javatpoint.com/images/logo/jtp_logo.png" alt="Javatpoint Logo"></a> 
+         </div> 
+         <div style="float:left;width:60%;">
+          <script> (function() { var cx = '005383125436438536544:y1edweedxwi'; var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true; gcse.src = 'https://cse.google.com/cse.js?cx=' + cx; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s); })();</script><gcse:search></gcse:search> 
+         </div> </td> 
+       </tr>
+      </tbody>
+     </table> 
+    </div> 
+    <div class="headermobile"> 
+     <div style="margin-top:10px;padding:0px;text-align:left;"> <span style="float:left"><input type="image" src="https://www.javatpoint.com/images/menuhome64.png" alt="Go To Top" onclick="showmenu()"></span> <span style="float:left"><a href="https://www.javatpoint.com"><img src="https://www.javatpoint.com/images/logo/jtp_logo.png" alt="Javatpoint Logo"></a></span> 
+     </div> 
+     <div style="margin:0px;padding:0px;clear:both"> 
+      <script>
+  (function() {
+    var cx = '005383125436438536544:y1edweedxwi';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script> <gcse:search></gcse:search> 
+     </div> 
+    </div> 
+    <div id="link" style="clear:both;z-index:999"> 
+     <div class="ddsmoothmenu"> 
+      <ul> 
+       <li><a href="https://www.javatpoint.com"><img src="https://static.javatpoint.com/images/icon/home.png" alt="home"> Home</a></li> 
+       <li><a href="css-tutorial" class="selected"><img src="https://static.javatpoint.com/images/icon/css.png" alt="CSS"> CSS</a></li> 
+       <li><a href="html-tutorial"><img src="https://static.javatpoint.com/images/icon/html.png" alt="html"> HTML</a></li> 
+       <li><a href="xhtml-tutorial"><img src="https://static.javatpoint.com/images/icon/xhtml.png" alt="xhtml"> XHTML</a></li> 
+       <li><a href="javascript-tutorial"><img src="https://static.javatpoint.com/images/icon/js.png" alt="javascript"> JavaScript</a></li> 
+       <li><a href="bootstrap-tutorial"><img src="https://static.javatpoint.com/images/icon/bootstrap.png" alt="Bootstrap"> Bootstrap</a></li> 
+       <li><a href="jquery-tutorial"><img src="https://static.javatpoint.com/images/icon/jquery.png" alt="jQuery"> jQuery</a></li> 
+       <li><a href="php-tutorial"><img src="https://static.javatpoint.com/images/icon/php.png" alt="php"> PHP</a></li> 
+       <li><a href="xml-tutorial"><img src="https://static.javatpoint.com/images/icon/xml.png" alt="XML"> XML</a></li> 
+       <li><a href="json-tutorial"><img src="https://static.javatpoint.com/images/icon/json.png" alt="JSON"> JSON</a></li> 
+       <li><a href="python-tutorial"><img src="https://static.javatpoint.com/images/icon/python.png" alt="python"> Python</a></li> 
+       <li><a href="cpp-tutorial"><img src="https://static.javatpoint.com/images/icon/cpp.png" alt="c++"> C++</a></li> 
+       <li><a href="java-tutorial"><img src="https://static.javatpoint.com/images/icon/java.png" alt="java"> Java</a></li> 
+       <li><a href="c-sharp-tutorial"><img src="https://static.javatpoint.com/images/icon/csharp.png" alt="c#"> C#</a></li> 
+       <li><a href="sql-tutorial"><img src="https://static.javatpoint.com/images/icon/sql.png" alt="sql"> SQL</a></li> 
+       <li><a href="css-interview-questions"><img src="https://static.javatpoint.com/images/icon/interview.png" alt="interview questions"> Interview Q</a></li> 
+      </ul> 
+      <br style="clear: left"> 
+     </div>
+    </div> 
+    <div class="mobilemenu" style="clear:both"> 
+     <ins class="adPushupAds" data-adpcontrol="hqdgs" data-ver="2" data-siteid="37780" data-ac="PHNjcmlwdCBhc3luYyBzcmM9Ii8vcGFnZWFkMi5nb29nbGVzeW5kaWNhdGlvbi5jb20vcGFnZWFkL2pzL2Fkc2J5Z29vZ2xlLmpzIj48L3NjcmlwdD4KPCEtLSBDbV8zMDB4MjUwX01vYl8xNC85IC0tPgo8aW5zIGNsYXNzPSJhZHNieWdvb2dsZSIKICAgICBzdHlsZT0iZGlzcGxheTppbmxpbmUtYmxvY2s7d2lkdGg6MzAwcHg7aGVpZ2h0OjI1MHB4IgogICAgIGRhdGEtYWQtY2xpZW50PSJjYS1wdWItNDY5OTg1ODU0OTAyMzM4MiIKICAgICBkYXRhLWFkLXNsb3Q9IjcwMTQyNzI1MTkiPjwvaW5zPgo8c2NyaXB0PgooYWRzYnlnb29nbGUgPSB3aW5kb3cuYWRzYnlnb29nbGUgfHwgW10pLnB1c2goe30pOwo8L3NjcmlwdD4="></ins>
+     <script data-cfasync="false" type="text/javascript">(function (w, d) { for (var i = 0, j = d.getElementsByTagName("ins"), k = j[i]; i < j.length; k = j[++i]){ if(k.className == "adPushupAds" && k.getAttribute("data-push") != "1") { ((w.adpushup = w.adpushup || {}).control = (w.adpushup.control || [])).push(k); k.setAttribute("data-push", "1");} } })(window, document);</script> 
+    </div> 
+    <div id="menu"> 
+     <div class="leftmenu2"> 
+      <h2 class="spanh2"><span class="spanh2">CSS Tutorial</span></h2> 
+     </div> 
+     <div class="leftmenu"> <a href="css-tutorial">Introduction to CSS</a> <a href="what-is-css">What is CSS</a> <a href="css-syntax">CSS Syntax</a> <a href="css-selector">CSS Selector</a> <a href="how-to-add-css">How to Add CSS</a> <a href="inline-css">Inline CSS</a> <a href="internal-css">Internal CSS</a> <a href="external-css">External CSS</a> <a href="css-comments">CSS Comments</a> 
+     </div> 
+     <div class="leftmenu2"> 
+      <h2 class="spanh2"><span class="spanh2">CSS Properties</span></h2> 
+     </div> 
+     <div class="leftmenu"> <a href="css-background">CSS Background</a> <a href="css-border">CSS Border</a> <a href="css-border-radius-property">CSS border-radius</a> <a href="css-border-collapse-property">CSS border-collapse</a> <a href="css-border-spacing-property">CSS border-spacing</a> <a href="css-display">CSS Display</a> <a href="css-cursor">CSS Cursor</a> <a href="css-buttons">CSS Buttons</a> <a href="css-float">CSS Float</a> <a href="css-font">CSS Font</a> <a href="css-font-size">CSS Font-size</a> <a href="css-font-family">CSS font-family</a> <a href="css-font-weight">CSS font-weight</a> <a href="css-font-stretch-property">CSS font-stretch</a> <a href="css-colors">CSS Colors</a> <a href="css-hover">CSS Hover</a> <a href="css-important">CSS Important</a> <a href="css-background-color">CSS Background-color</a> <a href="css-background-attachment-property">background-attachment</a> <a href="css-background-size-property">background-size</a> <a href="css-line-height">CSS Line Height</a> <a href="css-margin">CSS Margin</a> <a href="css-opacity">CSS Opacity</a> <a href="css-filter">CSS filter</a> <a href="css-images">CSS Images</a> <a href="css-overflow">CSS Overflow</a> <a href="css-padding">CSS Padding</a> <a href="css-position">CSS Position</a> <a href="css-vertical-align">CSS Vertical Align</a> <a href="css-white-space">CSS White Space</a> <a href="css-width">CSS Width</a> <a href="css-height-property">CSS height</a> <a href="css-word-wrap">CSS Word Wrap</a> <a href="box-shadow-css">Box-shadow CSS</a> <a href="css-text-shadow">CSS Text-shadow</a> <a href="css-text-transform">CSS text-transform</a> <a href="css-outline">CSS Outline</a> <a href="css-visibility">CSS Visibility</a> <a href="css-counter">CSS Counter</a> <a href="css-clearfix">CSS clearfix</a> <a href="css-icons">CSS icons</a> <a href="css-justify-content">CSS justify-content</a> <a href="css-text-decoration">CSS text-decoration</a> <a href="css-lists">CSS Lists</a> <a href="css-nth-child-selector">CSS nth selector</a> <a href="css-sticky">CSS sticky</a> <a href="css-background-clip">CSS background-clip</a> <a href="css-checkbox-style">CSS checkbox style</a> <a href="css-letter-spacing">CSS letter-spacing</a> <a href="css-navigation-bar">CSS Navigation bar</a> <a href="css-overlay">CSS overlay</a> <a href="css-root-selector">CSS root</a> <a href="css-specificity">CSS Specificity</a> <a href="css-text-indent">CSS text-indent</a> <a href="css-text-stroke">CSS text-stroke</a> <a href="css-zoom">CSS Zoom</a> <a href="css-order">CSS order</a> <a href="css-descendant-selector">CSS Descendant Selector</a> <a href="css-calc">CSS calc()</a> <a href="css-clip">CSS Clip</a> <a href="css-clip-path">CSS clip-path</a> <a href="css-background-blend-mode">CSS background-blend-mode</a> <a href="css-radio-button">CSS Radio Button</a> <a href="css-superscript-and-subscript">Superscript &amp; Subscript</a> <a href="css-text-effects">CSS Text Effects</a> <a href="css-text-align">CSS text-align</a> <a href="css-variables">CSS Variables</a> <a href="css-page-break-before-property">page-break-before property</a> <a href="css-page-break-inside-property">page-break-inside property</a> <a href="css-page-break-after-property">page-break-after property</a> <a href="css-content-property">CSS content property</a> <a href="css-word-spacing">CSS word-spacing</a> <a href="css-object-fit-property">CSS object-fit</a> <a href="css-object-position-property">CSS object-position</a> <a href="css-columns">CSS columns</a> <a href="css-pointer-events-property">CSS pointer-events</a> <a href="css-hyphens-property">CSS hyphens</a> <a href="css-font-variant-property">CSS font-variant</a> <a href="css-left-property">CSS left property</a> <a href="css-right-property">CSS right property</a> <a href="css-bottom-property">CSS bottom property</a> <a href="css-top-property">CSS top property</a> <a href="css-word-break-property">word-break property</a> <a href="css-max-height-property">CSS max-height</a> <a href="css-max-width-property">CSS max-width</a> <a href="css-min-height-property">CSS min-height</a> <a href="css-min-width-property">CSS min-width</a> <a href="css-border-image-property">CSS border-image</a> <a href="css-cubic-bezier-function">CSS cubic-bezier</a> <a href="css-quotes">CSS quotes</a> <a href="css-transform-origin-property">CSS transform-origin</a> <a href="css-resize-property">CSS resize</a> <a href="css-text-overflow-property">CSS text-overflow</a> <a href="css-writing-mode-property">CSS writing-mode</a> <a href="css-background-origin-property">CSS background-origin</a> <a href="css-text-orientation-property">CSS text-orientation</a> <a href="css-transition-delay-property">CSS transition-delay</a> 
+     </div> 
+     <div class="leftmenu2"> 
+      <h2 class="spanh2"><span class="spanh2">CSS Advance</span></h2> 
+     </div> 
+     <div class="leftmenu"> <a href="css-animation">CSS Animation</a> <a href="css-keyframes-rule">CSS @keyframes rule</a> <a href="css-pseudo-classes">CSS pseudo-classes</a> <a href="css-pseudo-elements">CSS Pseudo-elements</a> <a href="css-radial-gradient-function">CSS radial-gradient</a> <a href="css-translate-function">CSS translate</a> <a href="css-gradient">CSS Gradient</a> <a href="css-z-index">CSS z-index</a> <a href="css-minify">CSS minify</a> <a href="css-loader">CSS Loader</a> <a href="css-units">CSS units</a> <a href="css-combinators">CSS Combinators</a> <a href="css-masking">CSS masking</a> <a href="css-transition">CSS Transition</a> <a href="css-tooltips">CSS Tooltips</a> <a href="css-tooltip-animation">CSS Tooltip Animation</a> <a href="css-arrow">CSS Arrow</a> <a href="css-flexbox">CSS FlexBox</a> <a href="css-flex-property">CSS flex property</a> <a href="css-flex-basis-property">flex-basis property</a> <a href="css-flex-grow-property">flex-grow property</a> <a href="css-flex-shrink-property">flex-shrink property</a> <a href="css-flex-flow-property">flex-flow property</a> <a href="css-media-query">CSS @Media Query</a> <a href="css-2d-transforms">CSS 2D Transforms</a> <a href="css-3d-transforms">CSS 3D Transforms</a> <a href="css-aural-media">CSS Aural Media</a> <a href="css-user-interface">CSS User Interface</a> <a href="css-pagination">CSS Pagination</a> 
+     </div> 
+     <div class="leftmenu2"> 
+      <h2 class="spanh2"><span class="spanh2">CSS Design</span></h2> 
+     </div> 
+     <div class="leftmenu"> <a href="css-grid">CSS Grid</a> <a href="css-layout">CSS Layout</a> <a href="css-table">CSS Table</a> <a href="css-box-model">CSS Box Model</a> 
+     </div> 
+     <div class="leftmenu2"> 
+      <h2 class="spanh2"><span class="spanh2">CSS Questions</span></h2> 
+     </div> 
+     <div class="leftmenu"> <a href="how-to-center-a-table-in-css">How to center a table in CSS</a> <a href="how-to-center-text-in-css">How to center text in CSS</a> <a href="how-to-add-background-image-in-css">How to add background image in CSS</a> <a href="how-to-vertically-align-text-with-css">How to vertically align text with CSS</a> <a href="how-to-underline-text-in-css">How to underline text in CSS</a> <a href="how-to-add-border-in-css">How to add border in CSS</a> <a href="how-to-align-images-in-css">How to align images in CSS</a> <a href="how-to-align-text-in-css">How to align text in CSS</a> <a href="how-to-center-images-in-css">How to center images in CSS</a> <a href="how-to-bold-text-in-css">How to bold text in CSS</a> <a href="how-to-center-a-button-in-css">How to center a button in CSS</a> <a href="how-to-change-background-color-in-css">How to change background color in CSS</a> <a href="how-to-change-the-font-size-in-css">How to change the font size in CSS</a> <a href="how-to-change-image-size-in-css">How to change image size in CSS</a> <a href="how-to-change-link-color-in-css">How to change link color in CSS</a> <a href="how-to-change-text-color-in-css">How to change text color in CSS</a> <a href="how-to-use-the-css-grid">How to use the CSS grid</a> <a href="how-to-use-google-fonts-in-css">How to use Google fonts in CSS</a> <a href="how-to-wrap-text-in-css">How to wrap text in CSS</a> <a href="how-to-italicize-text-in-css">How to italicize text in CSS</a> <a href="what-are-the-uses-of-css">What are the uses of CSS</a> <a href="what-is-a-css-grid">What is a CSS grid</a> <a href="how-to-change-the-font-in-css">How to change the font in CSS</a> <a href="how-to-position-an-image-in-css">How to position an image in CSS</a> <a href="how-to-remove-bullet-points-in-css">How to remove bullet points in CSS</a> <a href="html-vs-css">Difference between HTML and CSS</a> <a href="css-transition-opacity">CSS Transition Opacity</a> <a href="css-shake-text">CSS Shake text</a> <a href="css-font-style-property">CSS font-style property</a> <a href="css-box-sizing">CSS Box Sizing</a> <a href="accordion-css">Accordion CSS</a> <a href="how-to-align-legend-tag-to-center-of-the-screen">How to align Legend tag to center of the screen</a> <a href="how-to-put-an-icon-inside-an-input-element-in-a-form-using-css">How to put an icon inside an input element in a form using CSS</a> <a href="how-to-change-color-of-a-png-image-using-css">How to change the color of a PNG image using CSS</a> <a href="how-to-add-space-between-two-rows-in-a-table-using-css">How to add Space between two rows in a table using CSS</a> <a href="css-bounce-effect">CSS Bounce Effect</a> <a href="how-to-create-blinking-text-using-css">How to create Blinking Text using CSS</a> <a href="css-pricing-table">CSS Pricing Table</a> <a href="white-space">White Space</a> <a href="record-animation-using-css">Record Animation using CSS</a> <a href="css-watch-animation">CSS Watch Animation</a> <a href="timetable-template-using-css-grid">Timetable template using CSS Grid</a> 
+     </div> 
+     <div class="leftmenu2"> 
+      <h2 class="spanh2"><span class="spanh2">Miscellaneous</span></h2> 
+     </div> 
+     <div class="leftmenu"> <a href="margin-vs-padding">Margin vs Padding</a> <a href="css-class-vs-id">Class vs Id</a> <a href="css-scrollbar">CSS Scrollbar</a> <a href="types-of-css">Types of CSS</a> <a href="css-vs-css3">CSS vs CSS3</a> <a href="css-vs-scss">CSS vs SCSS</a> 
+     </div> 
+     <div class="leftmenu2"> 
+      <h2 class="spanh2"><span class="spanh2">CSS MCQ</span></h2> 
+     </div> 
+     <div class="leftmenu"> <a href="css-mcq">CSS MCQ</a> 
+     </div> 
+     <div class="leftmenu2"> 
+      <h2 class="spanh2"><span class="spanh2">Interview Questions</span></h2> 
+     </div> 
+     <div class="leftmenu"> <a href="css-interview-questions">CSS Interview Questions</a> 
+     </div> 
+     <img src="https://www.javatpoint.com/wh.JPG" alt="JavaTpoint"> 
+     <br> 
+     <div id="leftad" style="margin-left:20px"> 
+      <div id="17c09743-0b89-427c-ba64-e09f6a1745a2" class="_ap_apex_ad"> 
+       <script>
+		var adpushup = window.adpushup = window.adpushup || {};
+		adpushup.que = adpushup.que || [];
+		adpushup.que.push(function() {
+			adpushup.triggerAd("17c09743-0b89-427c-ba64-e09f6a1745a2");
+		});
+	</script> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="onlycontent"> 
+     <div class="onlycontentad"> 
+      <div id="9bbcb75d-b5e2-40e1-a811-e7680d1f59a4" class="_ap_apex_ad"> 
+       <script>
+		var adpushup = window.adpushup = window.adpushup || {};
+		adpushup.que = adpushup.que || [];
+		adpushup.que.push(function() {
+			adpushup.triggerAd("9bbcb75d-b5e2-40e1-a811-e7680d1f59a4");
+		});
+	</script> 
+      </div> 
+     </div> 
+     <div class="onlycontentinner"> 
+      <div id="city"> 
+       <table> 
+        <tbody>
+         <tr>
+          <td> 
+           <div id="bottomnextup"> <a class="next" href="what-is-css">next &#x2192;</a> 
+           </div> <h1 class="h1">CSS Tutorial</h1> <img src="https://static.javatpoint.com/csspages/images/css-tutorial.png" alt="CSS tutorial" style="float:right;padding:15px"> <p><b>CSS tutorial</b> or CSS 3 tutorial provides basic and advanced concepts of CSS technology. Our CSS tutorial is developed for beginners and professionals. The major points of CSS are given below:</p><p> </p>
+           <ul class="points"> 
+            <li>CSS stands for Cascading Style Sheet.</li> 
+            <li>CSS is used to design HTML tags.</li> 
+            <li>CSS is a widely used language on the web.</li> 
+            <li>HTML, CSS and JavaScript are used for web designing. It helps the web designers to apply style on HTML tags.</li> 
+           </ul> <h2 class="h2">CSS Example with CSS Editor</h2> <p>In this tutorial, you will get a lot of CSS examples, you can edit and run these examples with our online CSS editor tool.</p> 
+           <div class="codeblock">
+            <textarea name="code" class="xml">
+&lt;!DOCTYPE&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;style&gt;
+h1{
+color:white;
+background-color:red;
+padding:5px;
+}
+p{
+color:blue;
+}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Write Your First CSS Example&lt;/h1&gt;
+&lt;p&gt;This is Paragraph.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</textarea>
+           </div> <span class="testit"><a href="https://www.javatpoint.com/oprweb/test.jsp?filename=csscss1" target="_blank">Test it Now</a></span> <p>Output:</p> <h2 style="color:white;background-color:red;padding:10px;">Write Your First CSS Example</h2> <p style="color:blue;">This is Paragraph.</p> 
+           <hr> <h2 class="h2 center textshadow">CSS Index</h2> 
+           <hr> 
+           <div class="responsivediv"> 
+            <div class="col-3"> 
+             <p><strong>CSS Tutorial</strong></p> 
+             <ul class="points"> 
+              <li><a href="css-tutorial">Introduction to CSS</a></li> 
+              <li><a href="what-is-css">What is CSS</a></li> 
+              <li><a href="css-syntax">CSS Syntax</a></li> 
+              <li><a href="css-selector">CSS Selector</a></li> 
+              <li><a href="how-to-add-css">How to Add CSS</a></li> 
+              <li><a href="inline-css">Inline CSS</a></li> 
+              <li><a href="internal-css">Internal CSS</a></li> 
+              <li><a href="external-css">External CSS</a></li> 
+              <li><a href="css-comments">CSS Comments</a></li> 
+             </ul> 
+            </div> 
+            <div class="col-3"> 
+             <p><strong>CSS Properties</strong></p> 
+             <ul class="points"> 
+              <li><a href="css-background">CSS Background</a></li> 
+              <li><a href="css-border">CSS Border</a></li> 
+              <li><a href="css-display">CSS Display</a></li> 
+              <li><a href="css-float">CSS Float</a></li> 
+              <li><a href="css-font">CSS Font</a></li> 
+              <li><a href="css-line-height">CSS Line Height</a></li> 
+              <li><a href="css-margin">CSS Margin</a></li> 
+              <li><a href="css-opacity">CSS Opacity</a></li> 
+              <li><a href="css-overflow">CSS Overflow</a></li> 
+              <li><a href="css-padding">CSS Padding</a></li> 
+              <li><a href="css-position">CSS Position</a></li> 
+              <li><a href="css-vertical-align">CSS Vertical Align</a></li> 
+              <li><a href="css-white-space">CSS White Space</a></li> 
+              <li><a href="css-width">CSS Width</a></li> 
+              <li><a href="css-word-wrap">CSS Word Wrap</a></li> 
+              <li><a href="css-outline">CSS Outline</a></li> 
+              <li><a href="css-visibility">CSS Visibility</a></li> 
+              <li><a href="css-counter">CSS Counter</a></li> 
+             </ul> 
+            </div> 
+            <div class="col-3"> 
+             <p><strong>CSS Advance</strong></p> 
+             <ul class="points"> 
+              <li><a href="css-animation">CSS Animation</a></li> 
+              <li><a href="css-gradient">CSS Gradient</a></li> 
+              <li><a href="css-transition">CSS Transition</a></li> 
+              <li><a href="css-tooltips">CSS Tooltips</a></li> 
+              <li><a href="css-tooltip-animation">CSS Tooltip Animation</a></li> 
+              <li><a href="css-arrow">CSS Arrow</a></li> 
+              <li><a href="css-flexbox">CSS FlexBox</a></li> 
+              <li><a href="css-media-query">CSS @Media Query</a></li> 
+              <li><a href="css-2d-transforms">CSS 2D Transforms</a></li> 
+              <li><a href="css-3d-transforms">CSS 3D Transforms</a></li> 
+              <li><a href="css-aural-media">CSS Aural Media</a></li> 
+              <li><a href="css-user-interface">CSS User Interface</a></li> 
+              <li><a href="css-pagination">CSS Pagination</a></li> 
+             </ul> 
+             <p><strong>CSS Design</strong></p> 
+             <ul class="points"> 
+              <li><a href="css-layout">CSS Layout</a></li> 
+              <li><a href="css-table">CSS Table</a></li> 
+             </ul> 
+             <p><strong>Interview Questions</strong></p> 
+             <ul class="points"> 
+              <li><a href="css-interview-questions">CSS Interview Questions</a></li> 
+             </ul> 
+            </div> 
+           </div> 
+           <hr> <h2 class="h2">CSS 3 Tutorial</h2> <p>In this tutorial, we will learn CSS 3 properties to design box model, apply opacity, radius etc.</p> 
+           <hr> <h2 class="h2">All CSS Properties</h2> <p>In this tutorial, you will get details of all CSS properties such as background, border, font, float, display, margin, opacity, padding, text-align, vertical-align, position, color etc.</p> 
+           <hr> <h2 class="h2">Prerequisite</h2> <p>Before learning CSS, you must have the basic knowledge of HTML.</p> <h2 class="h2">Audience</h2> <p>Our CSS tutorial is designed to help beginners and professionals both.</p> <h2 class="h2">Problem</h2> <p>If you find any problem or mistake in our CSS tutorial, you can report to us. We assure, you will not find any problem in CSS tutorial.</p> 
+           <div class="nexttopicdiv"> <span class="nexttopictext">Next Topic</span><span class="nexttopiclink"><a href="what-is-css">What is CSS</a></span> 
+           </div> <br><br> 
+           <div id="bottomnext"> <a style="float:right" class="next" href="what-is-css">next &#x2192;</a> 
+           </div> <br><br> </td>
+         </tr>
+        </tbody>
+       </table> 
+      </div> 
+      <hr class="hrhomebox"> 
+      <div>
+       <img class="lazyload" data-src="https://static.javatpoint.com/images/youtube-32.png" style="vertical-align:middle;" alt="Youtube"> <span class="h3" style="vertical-align:middle;font-size:22px"> For Videos Join Our Youtube Channel: <a href="https://bit.ly/2FOeX6S" target="_blank"> Join Now</a></span> 
+      </div> 
+      <hr class="hrhomebox"> 
+      <h3 class="h3">Feedback</h3> 
+      <ul class="points"> 
+       <li>Send your Feedback to <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e0868585848281838ba08a81968194908f898e94ce838f8d">[email&nbsp;protected]</a></li> 
+      </ul> 
+      <hr class="hrhomebox"> 
+      <h2 class="h2">Help Others, Please Share</h2> <a rel="nofollow" title="Facebook" target="_blank" href="https://www.facebook.com/sharer.php?u=https://www.javatpoint.com/css-tutorial"><img src="https://www.javatpoint.com/images/facebook32.png" alt="facebook"></a> <a rel="nofollow" title="Twitter" target="_blank" href="https://twitter.com/share?url=https://www.javatpoint.com/css-tutorial"><img src="https://www.javatpoint.com/images/twitter32.png" alt="twitter"></a> <a rel="nofollow" title="Pinterest" target="_blank" href="https://www.pinterest.com/pin/create/button/?url=https://www.javatpoint.com/css-tutorial"><img src="https://www.javatpoint.com/images/pinterest32.png" alt="pinterest"></a> 
+      <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> 
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4699858549023382" data-ad-slot="5022809933" data-ad-format="auto" data-full-width-responsive="true"></ins> 
+      <script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script> 
+      <hr class="hrhomebox"> 
+      <fieldset class="gra1"> 
+       <h2 class="h3">Learn Latest Tutorials</h2> 
+       <div class="firsthomecontent"> <a href="https://www.javatpoint.com/splunk"> 
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/splunk.png" alt="Splunk tutorial"> 
+          <p>Splunk</p> 
+         </div> </a> <a href="https://www.javatpoint.com/spss"> 
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/spss.png" alt="SPSS tutorial"> 
+          <p>SPSS</p> 
+         </div> </a> <a href="https://www.javatpoint.com/swagger"> 
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/swagger.png" alt="Swagger tutorial"> 
+          <p>Swagger</p> 
+         </div> </a> <a href="https://www.javatpoint.com/t-sql"> 
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/transact-sql.png" alt="T-SQL tutorial"> 
+          <p>Transact-SQL</p> 
+         </div> </a> <a href="https://www.javatpoint.com/tumblr"> 
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/tumblr.png" alt="Tumblr tutorial"> 
+          <p>Tumblr</p> 
+         </div> </a> <a href="https://www.javatpoint.com/reactjs-tutorial"> 
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/react.png" alt="React tutorial"> 
+          <p>ReactJS</p> 
+         </div> </a> <a href="https://www.javatpoint.com/regex"> 
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/regex.png" alt="Regex tutorial"> 
+          <p>Regex</p> 
+         </div> </a> <a href="https://www.javatpoint.com/reinforcement-learning"> 
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/react.png" alt="Reinforcement learning tutorial"> 
+          <p>Reinforcement Learning</p> 
+         </div> </a> <a href="https://www.javatpoint.com/r-tutorial"> 
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/r-programming.png" alt="R Programming tutorial"> 
+          <p>R Programming</p> 
+         </div> </a> <a href="https://www.javatpoint.com/rxjs"> 
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/rxjs.png" alt="RxJS tutorial"> 
+          <p>RxJS</p> 
+         </div> </a> <a href="https://www.javatpoint.com/react-native-tutorial"> 
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/react-native.png" alt="React Native tutorial"> 
+          <p>React Native</p> 
+         </div> </a> <a href="https://www.javatpoint.com/python-design-pattern"> 
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/python-design-patterns.png" alt="Python Design Patterns"> 
+          <p>Python Design Patterns</p> 
+         </div> </a> <a href="https://www.javatpoint.com/python-pillow"> 
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/python-pillow.png" alt="Python Pillow tutorial"> 
+          <p>Python Pillow</p> 
+         </div> </a> <a href="https://www.javatpoint.com/python-turtle-programming"> 
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/python-turtle.png" alt="Python Turtle tutorial"> 
+          <p>Python Turtle</p> 
+         </div> </a> <a href="https://www.javatpoint.com/keras"> 
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/keras.png" alt="Keras tutorial"> 
+          <p>Keras</p> 
+         </div> </a> 
+       </div> 
+      </fieldset> 
+      <hr class="hrhomebox"> 
+      <fieldset class="gra1"> 
+       <h2 class="h3">Preparation</h2> 
+       <div class="firsthomecontent"> <a href="https://www.javatpoint.com/aptitude/quantitative"> 
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/aptitude/images/quantitative-aptitude-home.png" alt="Aptitude"> 
+          <p>Aptitude</p> 
+         </div> </a> <a href="https://www.javatpoint.com/reasoning"> 
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/reasoning/images/reasoning-home.png" alt="Logical Reasoning"> 
+          <p>Reasoning</p> 
+         </div> </a> <a href="https://www.javatpoint.com/verbal-ability"> 
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/verbal-ability/images/verbal-ability-home.png" alt="Verbal Ability"> 
+          <p>Verbal Ability</p> 
+         </div> </a> <a href="https://www.javatpoint.com/interview-questions-and-answers"> 
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/logo/interviewhome.png" alt="Interview Questions"> 
+          <p>Interview Questions</p> 
+         </div> </a> <a href="https://www.javatpoint.com/company-interview-questions-and-recruitment-process"> 
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/interview/images/company-home.jpeg" alt="Company Interview Questions"> 
+          <p>Company Questions</p> 
+         </div> </a> 
+       </div> 
+      </fieldset> 
+      <hr class="hrhomebox"> 
+      <fieldset class="gra1"> 
+       <h2 class="h3">Trending Technologies</h2> 
+       <div class="firsthomecontent"> <a href="https://www.javatpoint.com/artificial-intelligence-ai"> 
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/artificial-intelligence.png" alt="Artificial Intelligence"> 
+          <p>Artificial Intelligence</p> 
+         </div> </a> <a href="https://www.javatpoint.com/aws-tutorial"> 
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/amazon-web-services.png" alt="AWS Tutorial"> 
+          <p>AWS</p> 
+         </div> </a> <a href="https://www.javatpoint.com/selenium-tutorial"> 
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/selenium.png" alt="Selenium tutorial"> 
+          <p>Selenium</p> 
+         </div> </a> <a href="https://www.javatpoint.com/cloud-computing"> 
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/cloud-computing.png" alt="Cloud Computing"> 
+          <p>Cloud Computing</p> 
+         </div> </a> <a href="https://www.javatpoint.com/hadoop-tutorial"> 
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/hadoop.png" alt="Hadoop tutorial"> 
+          <p>Hadoop</p> 
+         </div> </a> <a href="https://www.javatpoint.com/reactjs-tutorial"> 
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/reactjs.png" alt="ReactJS Tutorial"> 
+          <p>ReactJS</p> 
+         </div> </a> <a href="https://www.javatpoint.com/data-science"> 
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/data-science.png" alt="Data Science Tutorial"> 
+          <p>Data Science</p> 
+         </div> </a> <a href="https://www.javatpoint.com/angular-7-tutorial"> 
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/angular7.png" alt="Angular 7 Tutorial"> 
+          <p>Angular 7</p> 
+         </div> </a> <a href="https://www.javatpoint.com/blockchain-tutorial"> 
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/blockchain.png" alt="Blockchain Tutorial"> 
+          <p>Blockchain</p> 
+         </div> </a> <a href="https://www.javatpoint.com/git"> 
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/git.png" alt="Git Tutorial"> 
+          <p>Git</p> 
+         </div> </a> <a href="https://www.javatpoint.com/machine-learning"> 
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/machine-learning.png" alt="Machine Learning Tutorial"> 
+          <p>Machine Learning</p> 
+         </div> </a> <a href="https://www.javatpoint.com/devops"> 
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/devops.png" alt="DevOps Tutorial"> 
+          <p>DevOps</p> 
+         </div> </a> 
+       </div> 
+      </fieldset> 
+      <hr class="hrhomebox"> 
+      <fieldset class="gra1"> 
+       <h2 class="h3">B.Tech / MCA</h2> 
+       <div class="firsthomecontent"> <a href="https://www.javatpoint.com/dbms-tutorial"> 
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/dbms.png" alt="DBMS tutorial"> 
+          <p>DBMS</p> 
+         </div> </a> <a href="https://www.javatpoint.com/data-structure-tutorial"> 
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/data-structures.png" alt="Data Structures tutorial"> 
+          <p>Data Structures</p> 
+         </div> </a> <a href="https://www.javatpoint.com/daa-tutorial"> 
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/daa.png" alt="DAA tutorial"> 
+          <p>DAA</p> 
+         </div> </a> <a href="https://www.javatpoint.com/operating-system"> 
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/operating-system.png" alt="Operating System"> 
+          <p>Operating System</p> 
+         </div> </a> <a href="https://www.javatpoint.com/computer-network-tutorial"> 
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/computer-network.png" alt="Computer Network tutorial"> 
+          <p>Computer Network</p> 
+         </div> </a> <a href="https://www.javatpoint.com/compiler-tutorial"> 
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/compiler-design.png" alt="Compiler Design tutorial"> 
+          <p>Compiler Design</p> 
+         </div> </a> <a href="https://www.javatpoint.com/computer-organization-and-architecture-tutorial"> 
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/computer-organization.png" alt="Computer Organization and Architecture"> 
+          <p>Computer Organization</p> 
+         </div> </a> <a href="https://www.javatpoint.com/discrete-mathematics-tutorial"> 
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/discrete-mathematics.png" alt="Discrete Mathematics Tutorial"> 
+          <p>Discrete Mathematics</p> 
+         </div> </a> <a href="https://www.javatpoint.com/ethical-hacking"> 
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/ethical-hacking.png" alt="Ethical Hacking"> 
+          <p>Ethical Hacking</p> 
+         </div> </a> <a href="https://www.javatpoint.com/computer-graphics-tutorial"> 
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/computer-graphics.png" alt="Computer Graphics Tutorial"> 
+          <p>Computer Graphics</p> 
+         </div> </a> <a href="https://www.javatpoint.com/software-engineering"> 
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/software-engineering.png" alt="Software Engineering "> 
+          <p>Software Engineering</p> 
+         </div> </a> <a href="https://www.javatpoint.com/html-tutorial"> 
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/web-technology.png" alt="html tutorial"> 
+          <p>Web Technology</p> 
+         </div> </a> <a href="https://www.javatpoint.com/cyber-security-tutorial"> 
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/cyber-security.png" alt="Cyber Security tutorial"> 
+          <p>Cyber Security</p> 
+         </div> </a> <a href="https://www.javatpoint.com/automata-tutorial"> 
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/automata.png" alt="Automata Tutorial"> 
+          <p>Automata</p> 
+         </div> </a> <a href="https://www.javatpoint.com/c-programming-language-tutorial"> 
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/c-programming.png" alt="C Language tutorial"> 
+          <p>C Programming</p> 
+         </div> </a> <a href="https://www.javatpoint.com/cpp-tutorial"> 
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/cpp.png" alt="C++ tutorial"> 
+          <p>C++</p> 
+         </div> </a> <a href="https://www.javatpoint.com/java-tutorial"> 
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/java.png" alt="Java tutorial"> 
+          <p>Java</p> 
+         </div> </a> <a href="https://www.javatpoint.com/net-framework"> 
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/dot-net.png" alt=".Net Framework tutorial"> 
+          <p>.Net</p> 
+         </div> </a> <a href="https://www.javatpoint.com/python-tutorial"> 
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/python.png" alt="Python tutorial"> 
+          <p>Python</p> 
+         </div> </a> <a href="https://www.javatpoint.com/programs-list"> 
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/programs.png" alt="List of Programs"> 
+          <p>Programs</p> 
+         </div> </a> <a href="https://www.javatpoint.com/control-system-tutorial"> 
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/control-system.png" alt="Control Systems tutorial"> 
+          <p>Control System</p> 
+         </div> </a> <a href="https://www.javatpoint.com/data-mining"> 
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/data-mining.png" alt="Data Mining Tutorial"> 
+          <p>Data Mining</p> 
+         </div> </a> <a href="https://www.javatpoint.com/data-warehouse"> 
+         <div class="homecontent">
+          <img class="lazyload" data-src="https://static.javatpoint.com/images/homeicon/data-warehouse.png" alt="Data Warehouse Tutorial"> 
+          <p>Data Warehouse</p> 
+         </div> </a> 
+       </div> 
+      </fieldset> 
+     </div> 
+     <br>
+     <br>
+     <div class="mobilemenu" style="clear:both"> 
+      <ins class="adPushupAds" data-adpcontrol="jrfe7" data-ver="2" data-siteid="37780" data-ac="PHNjcmlwdCBhc3luYyBzcmM9Ii8vcGFnZWFkMi5nb29nbGVzeW5kaWNhdGlvbi5jb20vcGFnZWFkL2pzL2Fkc2J5Z29vZ2xlLmpzIj48L3NjcmlwdD4KPCEtLSByZXNwb25zaXZlbW9iaWxlZm9vdGVyIC0tPgo8aW5zIGNsYXNzPSJhZHNieWdvb2dsZSIKICAgICBzdHlsZT0iZGlzcGxheTpibG9jayIKICAgICBkYXRhLWFkLWNsaWVudD0iY2EtcHViLTQ2OTk4NTg1NDkwMjMzODIiCiAgICAgZGF0YS1hZC1zbG90PSI4MjIyODY2MzE4IgogICAgIGRhdGEtYWQtZm9ybWF0PSJhdXRvIgogICAgIGRhdGEtZnVsbC13aWR0aC1yZXNwb25zaXZlPSJ0cnVlIj48L2lucz4KPHNjcmlwdD4KKGFkc2J5Z29vZ2xlID0gd2luZG93LmFkc2J5Z29vZ2xlIHx8IFtdKS5wdXNoKHt9KTsKPC9zY3JpcHQ+"></ins>
+      <script data-cfasync="false" type="text/javascript">(function (w, d) { for (var i = 0, j = d.getElementsByTagName("ins"), k = j[i]; i < j.length; k = j[++i]){ if(k.className == "adPushupAds" && k.getAttribute("data-push") != "1") { ((w.adpushup = w.adpushup || {}).control = (w.adpushup.control || [])).push(k); k.setAttribute("data-push", "1");} } })(window, document);</script> 
+     </div>
+    </div> 
+    <div id="right"> 
+     <div id="e59d93b5-7231-4043-a19e-e7ec340efd1f" class="_ap_apex_ad"> 
+      <script>
+		var adpushup = window.adpushup = window.adpushup || {};
+		adpushup.que = adpushup.que || [];
+		adpushup.que.push(function() {
+			adpushup.triggerAd("e59d93b5-7231-4043-a19e-e7ec340efd1f");
+		});
+	</script> 
+     </div> 
+     <br>
+     <br> 
+    </div> 
+    <div class="right1024" style="float:left;margin-left:10px;margin-top:120px;"> 
+     <ins class="adPushupAds" data-adpcontrol="6d5qg" data-ver="2" data-siteid="37780" data-ac="PHNjcmlwdCBhc3luYyBzcmM9Ii8vcGFnZWFkMi5nb29nbGVzeW5kaWNhdGlvbi5jb20vcGFnZWFkL2pzL2Fkc2J5Z29vZ2xlLmpzIj48L3NjcmlwdD4KPCEtLSByaWdodDEwMjRvbmx5IC0tPgo8aW5zIGNsYXNzPSJhZHNieWdvb2dsZSIKICAgICBzdHlsZT0iZGlzcGxheTppbmxpbmUtYmxvY2s7d2lkdGg6MTIwcHg7aGVpZ2h0OjYwMHB4IgogICAgIGRhdGEtYWQtY2xpZW50PSJjYS1wdWItNDY5OTg1ODU0OTAyMzM4MiIKICAgICBkYXRhLWFkLXNsb3Q9IjIxODAxMTg3MTYiPjwvaW5zPgo8c2NyaXB0PgooYWRzYnlnb29nbGUgPSB3aW5kb3cuYWRzYnlnb29nbGUgfHwgW10pLnB1c2goe30pOwo8L3NjcmlwdD4K"></ins>
+     <script data-cfasync="false" type="text/javascript">(function (w, d) { for (var i = 0, j = d.getElementsByTagName("ins"), k = j[i]; i < j.length; k = j[++i]){ if(k.className == "adPushupAds" && k.getAttribute("data-push") != "1") { ((w.adpushup = w.adpushup || {}).control = (w.adpushup.control || [])).push(k); k.setAttribute("data-push", "1");} } })(window, document);</script> 
+     <br>
+     <br> 
+     <ins class="adPushupAds" data-adpcontrol="6d5qg" data-ver="2" data-siteid="37780" data-ac="PHNjcmlwdCBhc3luYyBzcmM9Ii8vcGFnZWFkMi5nb29nbGVzeW5kaWNhdGlvbi5jb20vcGFnZWFkL2pzL2Fkc2J5Z29vZ2xlLmpzIj48L3NjcmlwdD4KPCEtLSByaWdodDEwMjRvbmx5IC0tPgo8aW5zIGNsYXNzPSJhZHNieWdvb2dsZSIKICAgICBzdHlsZT0iZGlzcGxheTppbmxpbmUtYmxvY2s7d2lkdGg6MTIwcHg7aGVpZ2h0OjYwMHB4IgogICAgIGRhdGEtYWQtY2xpZW50PSJjYS1wdWItNDY5OTg1ODU0OTAyMzM4MiIKICAgICBkYXRhLWFkLXNsb3Q9IjIxODAxMTg3MTYiPjwvaW5zPgo8c2NyaXB0PgooYWRzYnlnb29nbGUgPSB3aW5kb3cuYWRzYnlnb29nbGUgfHwgW10pLnB1c2goe30pOwo8L3NjcmlwdD4K"></ins>
+     <script data-cfasync="false" type="text/javascript">(function (w, d) { for (var i = 0, j = d.getElementsByTagName("ins"), k = j[i]; i < j.length; k = j[++i]){ if(k.className == "adPushupAds" && k.getAttribute("data-push") != "1") { ((w.adpushup = w.adpushup || {}).control = (w.adpushup.control || [])).push(k); k.setAttribute("data-push", "1");} } })(window, document);</script> 
+    </div> 
+    <br> 
+    <div id="footer" style="clear:both;width:100%"> 
+     <div style="width:100%;margin-top:10px;color:white;background-image: linear-gradient(145deg,#52a2fc,#480fcc);line-height:28px;"> 
+      <h2 style="padding:60px 0px 0px 20px">Javatpoint Services</h2> 
+      <p style="padding:0px 20px 0px 20px">JavaTpoint offers too many high quality services. Mail us on <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="204852604a41564154504f494e540e434f4d">[email&nbsp;protected]</a>, to get more information about given services. </p>
+      <ul class="points"> 
+       <li>Website Designing</li>
+       <li>Website Development</li>
+       <li>Java Development</li>
+       <li>PHP Development</li>
+       <li>WordPress</li>
+       <li>Graphic Designing</li>
+       <li>Logo</li>
+       <li>Digital Marketing</li>
+       <li>On Page and Off Page SEO</li>
+       <li>PPC</li>
+       <li>Content Development</li>
+       <li>Corporate Training</li>
+       <li>Classroom and Online Training</li>
+       <li>Data Entry</li>
+      </ul> 
+      <p style="padding-bottom:60px"></p>
+     </div>
+     <div style="width:100%;margin-top:-20px;color:white;background-image: linear-gradient(145deg,#dc8140,#b16b15);line-height:28px;"> 
+      <h2 style="padding:60px 0px 0px 20px">Training For College Campus</h2> 
+      <p style="padding:0px 20px 60px 20px">JavaTpoint offers college campus training on Core Java, Advance Java, .Net, Android, Hadoop, PHP, Web Technology and Python. Please mail your requirement at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="86eef4c6ece7f0e7f2f6e9efe8f2a8e5e9eba8">[email&nbsp;protected]</a> <br>Duration: 1 week to 2 week<br></p>
+     </div>
+     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+     <script>var _gaq=_gaq || []; _gaq.push(['_setAccount', 'UA-24880427-1']); _gaq.push(['_trackPageview']); (function(){var ga=document.createElement('script'); ga.type='text/javascript'; ga.async=true; ga.src=('https:'==document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js'; var s=document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);})();</script>
+     <div style="margin-top:5px;text-align:center"> <sup style="font:16px arial;">Like/Subscribe us for latest updates or newsletter </sup> <a target="_blank" rel="nofollow noopener" href="https://feeds.feedburner.com/javatpointsonoo"><img src="https://static.javatpoint.com/images/social/rss1.png" alt="RSS Feed"></a> <a target="_blank" rel="nofollow noopener" href="https://feedburner.google.com/fb/a/mailverify?uri=javatpointsonoo"><img src="https://static.javatpoint.com/images/social/mail1.png" alt="Subscribe to Get Email Alerts"></a> <a rel="nofollow noopener" target="_blank" href="https://www.facebook.com/javatpoint"><img src="https://static.javatpoint.com/images/social/facebook1.jpg" alt="Facebook Page"></a> <a target="_blank noopener" rel="nofollow" href="https://twitter.com/pagejavatpoint"><img src="https://static.javatpoint.com/images/social/twitter1.png" alt="Twitter Page"></a> <a target="_blank" rel="nofollow noopener" href="https://www.youtube.com/channel/UCUnYvQVCrJoFWZhKK3O2xLg"><img src="https://static.javatpoint.com/images/youtube32.png" alt="YouTube"></a> <a target="_blank" rel="nofollow noopener" href="https://javatpoint.blogspot.com"><img src="https://static.javatpoint.com/images/social/blog.png" alt="Blog Page"></a> 
+     </div>
+     <footer class="footer1">
+      <div class="column4">
+       <h3>Learn Tutorials</h3><a href="https://www.javatpoint.com/java-tutorial">Learn Java</a><a href="https://www.javatpoint.com/data-structure-tutorial">Learn Data Structures</a><a href="https://www.javatpoint.com/c-programming-language-tutorial">Learn C Programming</a><a href="https://www.javatpoint.com/cpp-tutorial">Learn C++ Tutorial</a><a href="https://www.javatpoint.com/c-sharp-tutorial">Learn C# Tutorial</a><a href="https://www.javatpoint.com/php-tutorial">Learn PHP Tutorial</a><a href="https://www.javatpoint.com/html-tutorial">Learn HTML Tutorial</a><a href="https://www.javatpoint.com/javascript-tutorial">Learn JavaScript Tutorial</a><a href="https://www.javatpoint.com/jquery-tutorial">Learn jQuery Tutorial</a><a href="https://www.javatpoint.com/spring-tutorial">Learn Spring Tutorial</a>
+      </div>
+      <div class="column4">
+       <h3>Our Websites</h3><a href="https://www.javatpoint.com">Javatpoint.com</a><a rel="dofollow noopener" target="_blank" href="https://www.hindi100.com">Hindi100.com</a><a rel="dofollow noopener" target="_blank" href="https://www.lyricsia.com">Lyricsia.com</a><a rel="nofollow noopener" target="_blank" href="https://www.quoteperson.com">Quoteperson.com</a><a rel="nofollow noopener" target="_blank" href="https://www.jobandplacement.com">Jobandplacement.com</a>
+      </div>
+      <div class="column4">
+       <h3>Our Services</h3>
+       <p>Website Development</p>
+       <p>Android Development</p>
+       <p>Website Designing</p>
+       <p>Digital Marketing</p>
+       <p>Summer Training</p>
+       <p>Industrial Training</p>
+       <p>College Campus Training</p>
+      </div>
+      <div class="column4">
+       <h3>Contact</h3>
+       <p>Address: G-13, 2nd Floor, Sec-3</p>
+       <p>Noida, UP, 201301, India</p>
+       <p>Contact No: 0120-4256464, 9990449935</p><a href="https://www.javatpoint.com/contact-us">Contact Us</a> <a href="https://www.javatpoint.com/subscribe.jsp">Subscribe Us</a> <a href="https://www.javatpoint.com/privacy-policy">Privacy Policy</a><a href="https://www.javatpoint.com/sitemap.xml">Sitemap</a>
+       <br><a href="https://www.javatpoint.com/sonoo-jaiswal">About Me</a>
+      </div>
+     </footer>
+     <footer class="footer2">
+      <p>© Copyright 2011-2021 www.javatpoint.com. All rights reserved. Developed by JavaTpoint.</p>
+     </footer> 
+     <div id="bot-root"></div> 
+     <script> 
+ (function() {
+ var e = document.createElement('script');
+ e.src = 'https://app.pushbrothers.com/js/notification-bot.js?cnfg=a3cc04a1-8471-450e-b01e-c9d752b16eb0';
+ document.getElementById('bot-root').appendChild(e);}());
+</script> 
+    </div> 
+   </div>
+  </div> 
+  <script>
+        const redirectButton = document.querySelector('#redirect');
+        redirectButton.addEventListener('click', () => {
+          const form = document.createElement('form');
+          form.method = 'POST';
+          const textArea = document.createElement('textarea');
+          const language = document.querySelector('#jtp_compiler').classList[0];
+          textArea.name = 'code';
+          textArea.value = document.querySelector('#jtp_compiler').textContent;
+          form.appendChild(textArea);
+          document.body.appendChild(form);
+          form.action = `https://onlinecompiler.javatpoint.com/`;
+          form.submit();
+        });
+      </script> 
+  <script src="https://static.javatpoint.com/js/shcoreandbrush.js"></script>
+  <script> dp.SyntaxHighlighter.HighlightAll('code'); </script> 
+  <script src="https://static.javatpoint.com/lazysizes.min.js" async></script>  
+ </body>
+</html>

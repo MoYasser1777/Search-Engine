@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#webcontainer {
+    width: 100%;
+    padding: 20px;
+    height: 12vh;
+}
+
+a {
+    text-decoration: none;
+    color: #1a0dab;
+    font-size: 1.5em;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h2 {
+    color: #01a049;
+    font-size: 1em;
+}
+
+p {
+    color: #808080;
+    font-size: 1em;
+}
